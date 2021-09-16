@@ -4,8 +4,10 @@ export class User {
     Name : string = '';
     Surname: string = '';
     Email : string= '';
+    Phone: number = 0;
+    Address: string = ""   
     BirthDate: Date = new Date();
     Password: string = '';
-    Phone: string = '';
-    Adress: string = '';
+    Adopted: boolean = false
+    Donated: boolean = false
 }
