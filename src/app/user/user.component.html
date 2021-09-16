@@ -1,1 +1,71 @@
-<p>user works!</p>
+<form class="row g-3">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Sobrenome</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+    </div>
+    <div>
+        <label for="formGroupExampleInput" class="form-label">CPF</label>
+        <input type="text" class="form-control cpf-mask" placeholder="Ex.: 000.000.000-00">
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" id="inputEmail4">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Crie uma senha</label>
+      <input type="password" class="form-control" id="inputPassword4">
+    </div>
+    <label for="selectBairro" class="form-label">Bairro</label>
+    <select class="form-select" aria-label="Default select example">
+        <option selected>Selecione</option>
+        <option value="1">Centro</option>
+        <option value="2">Velha</option>
+        <option value="3">Vila Nova</option>
+    </select>
+    <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Rua</label>
+        <input type="email" class="form-control" id="inputEmail4">
+      </div>
+    <div> 
+        <label for="formGroupExampleInput" class="form-label">CEP</label>
+        <input type="text" class="form-control cep-mask" placeholder="00000-000">
+    </div> 
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">State</label>
+      <select id="inputState" class="form-select">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+  </form>
+
+
+
+
+<hr>
+<a routerLink="/pet">Pet</a><br>
+<a routerLink="/app">Voltar</a><br>
+

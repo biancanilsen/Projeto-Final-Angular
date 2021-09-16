@@ -8,6 +8,7 @@ import { PetComponent } from './pet/pet.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     UserComponent,
     PetComponent,
+    HomeComponent,
     
   ],
   imports: [
