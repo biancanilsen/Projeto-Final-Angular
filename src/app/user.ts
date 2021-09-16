@@ -5,7 +5,10 @@ export class User {
     Surname: string = '';
     Email : string= '';
     Phone: number = 0;
-    Address: string = ""   
+    District: string = "" 
+    Road: string = "";
+    House_number: number = 0;
+    CEP: number = 0;  
     BirthDate: Date = new Date();
     Password: string = '';
     Adopted: boolean = false
