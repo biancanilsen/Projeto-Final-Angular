@@ -15,7 +15,7 @@ export class PetService {
 
   public list: Pet[] = [];
   public formDataPet: Pet = new Pet()
-  public public isNew : boolean = false;
+  public isNew : boolean = false;
 
   getAllPets(){
     this.httpClient.get<Pet[]>(this.BASE_URL ).subscribe((data) =>{
