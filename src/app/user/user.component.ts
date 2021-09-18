@@ -12,11 +12,7 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(form : any){
-    if(this.userService.isNew){
       this.postUser(); 
-    } else{
-      this.update();
-    }
   }
 
   update(){
