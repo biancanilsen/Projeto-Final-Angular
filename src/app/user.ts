@@ -6,7 +6,7 @@ export class User {
     Email : string= '';
     Phone: number = 0;
     District: string = "" 
-    Road: string = "";
+    Street: string = "";
     House_number: number = 0;
     CEP: number = 0;  
     BirthDate: Date = new Date();
