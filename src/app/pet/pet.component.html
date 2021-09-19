@@ -51,18 +51,30 @@
     <div>
       <label>Idade</label>
      <input
-        nome="idade"
+        nome="anos"
         class="form-control" 
-        type="date"
-        [(ngModel)]="this.petService.formData.Age"
+        type="number"
+        [(ngModel)]="this.petService.formData.Age_years"
         required
-        [class.invalid]="nome.invalid && nome.touched"
+        [class.invalid]="idade.invalid && idade.touched"
         maxlength="2"
         minlength="1"
         #idade="ngModel"
       >
-      
       <label>meses</label>
+      <input
+        nome="idade"
+        class="form-control" 
+        type="number"
+        [(ngModel)]="this.petService.formData.Age_months"
+        required
+        [class.invalid]="meses.invalid && meses.touched"
+        maxlength="2"
+        minlength="1"
+        #meses="ngModel"
+      >
+
+      <label>Meses</label>
 
     </div>
 
