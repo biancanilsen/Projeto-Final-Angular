@@ -2,14 +2,14 @@ import { Photo } from "./photo";
 
 export class Pet {
     Id: number = 0;
-    Publication_date: number = 0;
-    Name: string = "";
-    Animal: string = "";
-    Breed: string = "";
-    Age: number = 0;
-    Size: string = "";
-    Adopted: boolean = false;
+    Publication_date: number = 0; 
+    Name: string = ""; // nome do pet
+    Animal: string = ""; // tipo do animal
+    Breed: string = ""; // raça do animal
+    Age: number = 0; // idade
+    Size: string = ""; // porte, pequeno meido grande
+    Adopted: boolean = false; 
     Old_owner_id: string = "";
     New_owner_id: string = "";
-    Photo: Photo[] = [];
+    Photo: Photo[] = []; // baixar ft para colocar
 }

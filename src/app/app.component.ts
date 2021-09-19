@@ -1,5 +1,7 @@
 import { UserService } from './user.service';
 import { User } from './user';
+import { PetService } from './pet.service';
+import { Pet } from './pet';
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,9 +12,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Projeto-Final-Angular';
   user: User[] = [];
+  pet: Pet[] = [];
 
-  constructor(private userServise: UserService) {}
-
+  constructor(private userServise: UserService, private petServise: PetService) {}
+  
   ngOnInit(): void{
 
   }

@@ -1,4 +1,89 @@
-<p>pet works!</p>
-<hr>
+<div class="header"></div>
+<section>
+  <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form)">
+    
+    <div class="mb-3">
+      <label>Nome</label>
+      <input
+        name="nome"
+        class="form-control"
+        placeholder="Digite o nome do pet"
+        [(ngModel)]="this.petService.formData.Name"
+        required
+        minlength="2"
+        maxlength="60"
+        #nome="ngModel"
+      />
+    </div>
+    
+    <div class="mb-3">
+      <label>Animal</label>
+      <input
+        name="animal"
+        type="text"
+        class="form-control"
+        placeholder="Ex: cachorro"
+        [(ngModel)]="this.petService.formData.Animal"
+        required
+        minlength="1"
+        maxlength="60"
+        #animal="ngModel"
+      />
+    </div>
+   
+    <div>
+      <label>Raça</label>
+      <input
+        name="raca"
+        class="form-control"
+        placeholder="Ex: viralata"
+        [(ngModel)]="this.petService.formData.Breed"
+        required
+        maxlength="11"
+        minlength="11"
+        #raca="ngModel"
+      />
+    </div>
+
+    <div>
+      <label>Idade</label>
+     <input
+        nome="idade"
+        class="form-control" 
+        type="date"
+        [(ngModel)]="this.petService.formData.Age"
+        required
+        maxlength="10"
+        minlength="10"
+        #idade="ngModel"
+      >
+    </div>
+
+    <div>
+      <label>Porte</label>
+      <input
+        name="porte"
+        class="form-control"
+        type="text"
+        [(ngModel)]="this.petService.formData.Size"
+        required
+        maxlength="8"
+        minlength="5"
+        #porte="ngModel"
+      />
+    </div>
+
+    <div>
+      <label></label>
+    </div>  
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+        Salvar
+      </button>
+    </div>
+  </form>
+</section>
+
+
 <a routerLink="/user">User</a><br>
 <a routerLink="/app">Voltar</a><br>
