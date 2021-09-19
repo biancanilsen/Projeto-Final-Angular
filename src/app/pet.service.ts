@@ -1,20 +1,18 @@
-import { Injectable } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Pet } from './pet';
-
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class PetService {
 
-  BASE_URL = ""
+  BASE_URL = "https://localhost:44356/api/Pets"
   constructor (private httpClient: HttpClient) { }
 
   public list: Pet[] = [];
-  public formDataPet: Pet = new Pet()
+  public formData: Pet = new Pet()
   public isNew : boolean = false;
 
   getAllPets(){
@@ -30,7 +28,7 @@ export class PetService {
   }
 
   postPet(){
-    return this.httpClient.post(this.BASE_URL, this.formDataPet).subscribe( () => {
+    return this.httpClient.post(this.BASE_URL, this.formData).subscribe( () => {
       this.getAllPets();
     });
   }
