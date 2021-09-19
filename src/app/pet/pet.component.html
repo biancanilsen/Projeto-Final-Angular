@@ -1,7 +1,6 @@
 <div class="header"></div>
 <section>
   <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form)">
-    
     <div class="mb-3">
       <label>Nome</label>
       <input
@@ -10,6 +9,7 @@
         placeholder="Digite o nome do pet"
         [(ngModel)]="this.petService.formData.Name"
         required
+        [class.invalid]="nome.invalid && nome.touched"
         minlength="2"
         maxlength="60"
         #nome="ngModel"
@@ -25,6 +25,7 @@
         placeholder="Ex: cachorro"
         [(ngModel)]="this.petService.formData.Animal"
         required
+        [class.invalid]="animal.invalid && animal.touched"
         minlength="1"
         maxlength="60"
         #animal="ngModel"
@@ -39,6 +40,7 @@
         placeholder="Ex: viralata"
         [(ngModel)]="this.petService.formData.Breed"
         required
+        [class.invalid]="raca.invalid && raca.touched"
         maxlength="11"
         minlength="11"
         #raca="ngModel"
@@ -53,10 +55,14 @@
         type="date"
         [(ngModel)]="this.petService.formData.Age"
         required
-        maxlength="10"
-        minlength="10"
+        [class.invalid]="nome.invalid && nome.touched"
+        maxlength="2"
+        minlength="1"
         #idade="ngModel"
       >
+      
+      <label>meses</label>
+
     </div>
 
     <div>
