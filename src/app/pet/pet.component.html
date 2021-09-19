@@ -42,8 +42,8 @@
         [(ngModel)]="this.petService.formData.Breed"
         required
         [class.invalid]="raca.invalid && raca.touched"
-        maxlength="11"
-        minlength="11"
+        maxlength="60"
+        minlength="2"
         #raca="ngModel"
       />
     </div>
@@ -51,7 +51,7 @@
     <div>
       <label>Idade</label>
      <input
-        nome="anos"
+        name="anos"
         class="form-control" 
         type="number"
         [(ngModel)]="this.petService.formData.Age_years"
@@ -63,7 +63,7 @@
       >
       <label>meses</label>
       <input
-        nome="idade"
+        name="idade"
         class="form-control" 
         type="number"
         [(ngModel)]="this.petService.formData.Age_months"
@@ -77,20 +77,20 @@
       <label>Meses</label>
 
     </div>
-
+    <br>
     <div>
       <label>Porte</label>
-      <input
-        name="porte"
-        class="form-control"
-        type="text"
-        placeholder="Ex: pequenom, medio, grande"
-        [(ngModel)]="this.petService.formData.Size"
-        required
-        maxlength="8"
-        minlength="5"
-        #porte="ngModel"
-      />
+      <select
+      class="form-select"
+      name="porte"
+      [(ngModel)]="this.petService.formData.Size"
+      #bairro="ngModel"
+    >
+      <option selected>Selecione</option>
+      <option value="1">Pequeno</option>
+      <option value="2">Médio</option>
+      <option value="3">Grande</option>
+    </select>
     </div>
 
     <div>
@@ -100,9 +100,6 @@
         class="form-control"
         type="file"
         [(ngModel)]="this.petService.formData.Photo"
-        required
-        maxlength="8"
-        minlength="5"
         #foto="ngModel"
       />
     </div>  
