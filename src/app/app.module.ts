@@ -1,3 +1,4 @@
+import { PetService } from './pet.service';
 import { UserService } from './user.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,7 +28,7 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     FormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, PetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
