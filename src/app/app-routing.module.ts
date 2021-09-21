@@ -8,7 +8,7 @@ import { PetComponent } from './pet/pet.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'user-sign-up', component: UserComponent },
-  { path: 'pet', component: PetComponent },
+  { path: 'pet-sign-up', component: PetComponent },
   { path: 'user-login', component: UserLoginComponent }
 ];
 
