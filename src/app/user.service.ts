@@ -28,7 +28,6 @@ export class UserService {
   }
 
   postUser(){
-    debugger;
     return this.httpClient.post(this.BASE_URL, this.formData).subscribe( () => {
       this.getAllUsers();
     });
