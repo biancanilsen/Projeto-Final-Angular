@@ -2,3 +2,9 @@
 .invalid {
     color: red
 }
+.menu {
+    background:silver;
+    font-family:"Comic Sans MS";
+    float: left;
+    width: 30%;
+}
