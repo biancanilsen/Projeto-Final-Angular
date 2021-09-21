@@ -4,11 +4,11 @@ export class User {
     Name : string = '';
     Surname: string = '';
     Email : string= '';
-    Phone: number = 0;
+    Phone: string = '';
     District: string = "" 
     Street: string = "";
-    House_number: number = 0;
-    CEP: number = 0;  
+    House_number: string = '';
+    CEP: string = '';  
     BirthDate: Date = new Date();
     Password: string = '';
     Adopted: boolean = false

@@ -1,6 +1,6 @@
 <div class="header"></div>
 <section>
-  <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form)">
+  <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form)" style="margin-top: 100px;">
     <div class="mb-3">
       <label>Nome</label>
       <input
@@ -70,6 +70,7 @@
         type="password"
         class="form-control"
         required
+        [(ngModel)] = "this.userService.formData.Password"
         [class.invalid]="senha.invalid && senha.touched"
         maxlength="60"
         minlength="6"
@@ -89,7 +90,9 @@
           minlength="6"
           #senha2="ngModel"
         />
+      </div>
     </div>
+<<<<<<< HEAD
     <div>
       
     </div>
@@ -106,6 +109,24 @@
       <option value="2">Velha</option>
       <option value="3">Vila Nova</option>
     </select>
+=======
+    <div class="col-md-6">
+      <label>Bairro</label>
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        name="bairro"
+        [(ngModel)]="this.userService.formData.District"
+        #bairro="ngModel"
+      >
+        <option selected>Selecione</option>
+        <option value="1">Centro</option>
+        <option value="2">Velha</option>
+        <option value="3">Vila Nova</option>
+      </select>
+    </div>
+    
+>>>>>>> a64bf7cf962bb7b078d2d05afda1434446354d2d
 
     <div class="col-md-6">
       <label>Rua</label>
