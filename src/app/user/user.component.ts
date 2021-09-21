@@ -1,10 +1,6 @@
 import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { UserService } from '../user.service';
 
-=======
->>>>>>> e3b8664448a86d94dcc519b5a6cae3536a5a31e6
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
