@@ -1,6 +1,7 @@
 <div class="header"></div>
 <section>
   <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form)"style="margin-top: 100px;">
+    
     <div class="mb-3">
       <label>Nome</label>
       <input
@@ -20,7 +21,6 @@
       <label>Animal</label>
       <input
         name="animal"
-        type="text"
         class="form-control"
         placeholder="Ex: cachorro"
         [(ngModel)]="this.petService.formData.Animal"
@@ -36,14 +36,13 @@
       <label>Raça</label>
       <input
         name="raca"
-        type="text"
         class="form-control"
         placeholder="Ex: viralata"
         [(ngModel)]="this.petService.formData.Breed"
         required
         [class.invalid]="raca.invalid && raca.touched"
-        maxlength="60"
         minlength="2"
+        maxlength="60"
         #raca="ngModel"
       />
     </div>
@@ -56,10 +55,10 @@
         type="number"
         [(ngModel)]="this.petService.formData.Age_years"
         required
-        [class.invalid]="idade.invalid && idade.touched"
-        maxlength="2"
+        [class.invalid]="anos.invalid && anos.touched"
         minlength="1"
-        #idade="ngModel"
+        maxlength="2"
+        #anos="ngModel"
       >
       <label>meses</label>
       <input
@@ -69,22 +68,19 @@
         [(ngModel)]="this.petService.formData.Age_months"
         required
         [class.invalid]="meses.invalid && meses.touched"
-        maxlength="2"
         minlength="1"
+        maxlength="2"
         #meses="ngModel"
       >
-
-      <label>Meses</label>
-
     </div>
-    <br>
-    <div>
+
+    <div lass="col-md-6">
       <label>Porte</label>
       <select
       class="form-select"
       name="porte"
       [(ngModel)]="this.petService.formData.Size"
-      #bairro="ngModel"
+      #porte="ngModel"
     >
       <option selected>Selecione</option>
       <option value="1">Pequeno</option>
@@ -109,9 +105,6 @@
         Salvar
       </button>
     </div>
+
   </form>
 </section>
-
-
-<a routerLink="/user">User</a><br>
-<a routerLink="/app">Voltar</a><br>

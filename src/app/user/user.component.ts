@@ -9,8 +9,8 @@ export class UserComponent implements OnInit {
 
   constructor(public userService: UserService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
+  
   onSubmit(form : any){
       this.postUser(); 
   }
@@ -22,9 +22,8 @@ export class UserComponent implements OnInit {
   getUser(){
     this.userService.getUser(this.userService.formData);
   }
+
   postUser(){
     this.userService.postUser();
   }
-
-
 }
