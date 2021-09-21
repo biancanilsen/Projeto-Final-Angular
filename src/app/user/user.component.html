@@ -1,4 +1,4 @@
-<!--<div class="header"></div>
+<div class="header"></div>
 <section>
   <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form)">
     <div class="mb-3">
@@ -31,7 +31,6 @@
         #sobrenome="ngModel"
       />
     </div>
-    <br>
     <div>
       <label>CPF</label>
       <input
@@ -49,7 +48,6 @@
         O CPF deve conter 11 dígitos
       </p>
     </div>
-    <br>
     <div class="col-md-6">
       <label>Email</label>
       <input
@@ -77,6 +75,7 @@
         minlength="6"
         #senha="ngModel"
       />
+    </div>
       <div class="col-md-6">
         <label>Corfirme sua senha</label>
         <input
@@ -90,6 +89,9 @@
           minlength="6"
           #senha2="ngModel"
         />
+    </div>
+    <div>
+      
     </div>
     <label>Bairro</label>
     <select
@@ -140,4 +142,4 @@
       </button>
     </div>
   </form>
-</section>!-->
+</section>
