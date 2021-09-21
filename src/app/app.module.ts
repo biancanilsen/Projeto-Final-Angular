@@ -1,3 +1,4 @@
+import { PetService } from './pet.service';
 import { UserService } from './user.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 
 
@@ -18,6 +20,7 @@ import { HomeComponent } from './home/home.component';
     UserComponent,
     PetComponent,
     HomeComponent,
+    UserLoginComponent,
     
   ],
   imports: [
@@ -27,7 +30,7 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     FormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, PetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

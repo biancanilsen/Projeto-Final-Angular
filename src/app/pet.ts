@@ -2,7 +2,7 @@ import { Photo } from "./photo";
 
 export class Pet {
     Id: number = 0;
-    Publication_date: number = 0; 
+    Publication_date: Date = new Date(); 
     Name: string = ""; // nome do pet
     Animal: string = ""; // tipo do animal
     Breed: string = ""; // raça do animal
