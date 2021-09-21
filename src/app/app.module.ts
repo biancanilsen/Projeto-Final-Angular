@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { UserMenuComponent } from './user-menu/user-menu.component';
 
 
 
@@ -21,6 +22,7 @@ import { UserLoginComponent } from './user-login/user-login.component';
     PetComponent,
     HomeComponent,
     UserLoginComponent,
+    UserMenuComponent,
     
   ],
   imports: [
