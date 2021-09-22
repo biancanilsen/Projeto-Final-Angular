@@ -1,119 +1,120 @@
 <div class="header"></div>
-<section class="container">
-  <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form)" style="margin-top: 100px;">
-    <div class="mb-3">
-      <label>Nome</label>
-      <input
-        name="nome"
-        class="form-control"
-        placeholder="Digite seu nome"
-        [(ngModel)]="this.userService.formData.Name"
-        required
-        [class.invalid]="nome.invalid && nome.touched"
-        minlength="3"
-        maxlength="50"
-        #nome="ngModel"
-      />
-    </div>
+<div class="jumbotron">
+  <section class="container">
+    <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form)" style="margin-top: 100px;">
+      <div class="mb-3">
+        <label>Nome</label>
+        <input
+          name="nome"
+          class="form-control"
+          placeholder="Digite seu nome"
+          [(ngModel)]="this.userService.formData.Name"
+          required
+          [class.invalid]="nome.invalid && nome.touched"
+          minlength="3"
+          maxlength="50"
+          #nome="ngModel"
+        />
+      </div>
 
-    <div class="mb-3">
-      <label>Sobrenome</label>
-      <input
-        name="sobrenome"
-        class="form-control"
-        placeholder="Digite seu sobrenome"
-        [(ngModel)]="this.userService.formData.Surname"
-        required
-        [class.invalid]="sobrenome.invalid && sobrenome.touched"
-        minlength="3"
-        maxlength="50"
-        #sobrenome="ngModel"
-      />
-    </div>
-    
-    <div class="mb-3">
-      <label>Telefone</label>
-      <input
-        name="telefone"
-        class="form-control"
-        placeholder="(47) 99124-1245"
-        [(ngModel)]="this.userService.formData.Phone"
-        required
-        [class.invalid]="telefone.invalid && telefone.touched"
-        minlength="11"
-        maxlength="15"
-        #telefone="ngModel"
-      />
-      <p *ngIf="telefone.invalid && telefone.touched" class="invalid">
-        O telefone deve conter no minimo 11 dígitos!
-      </p>
-    </div>
+      <div class="mb-3">
+        <label>Sobrenome</label>
+        <input
+          name="sobrenome"
+          class="form-control"
+          placeholder="Digite seu sobrenome"
+          [(ngModel)]="this.userService.formData.Surname"
+          required
+          [class.invalid]="sobrenome.invalid && sobrenome.touched"
+          minlength="3"
+          maxlength="50"
+          #sobrenome="ngModel"
+        />
+      </div>
+      
+      <div class="mb-3">
+        <label>Telefone</label>
+        <input
+          name="telefone"
+          class="form-control"
+          placeholder="(47) 99124-1245"
+          [(ngModel)]="this.userService.formData.Phone"
+          required
+          [class.invalid]="telefone.invalid && telefone.touched"
+          minlength="11"
+          maxlength="15"
+          #telefone="ngModel"
+        />
+        <p *ngIf="telefone.invalid && telefone.touched" class="invalid">
+          O telefone deve conter no minimo 11 dígitos!
+        </p>
+      </div>
 
-    <div class="mb-3">
-      <label>Data de nascimento</label>
-      <input
-        name="diaNascimento"
-        type="date"
-        class="form-control"
-        [(ngModel)]="this.userService.formData.BirthDate"
-        required
-        [class.invalid]="diaNascimento.invalid && diaNascimento.touched"
-        minlength="8"
-        maxlength="10"
-        #diaNascimento="ngModel"
-      />
-    </div>
-    
-    <div>
-      <label>CPF</label>
-      <input
-        name="cpf"
-        class="form-control"
-        placeholder="Ex.: 000.000.000-00"
-        [(ngModel)]="this.userService.formData.CPF"
-        required
-        [class.invalid]="cpf.invalid && cpf.touched"
-        minlength="11"
-        maxlength="14"
-        #cpf="ngModel"
-      />
-      <p *ngIf="cpf.invalid && cpf.touched" class="invalid">
-        O CPF deve conter no minimo 11 dígitos
-      </p>
-    </div>
+      <div class="mb-3">
+        <label>Data de nascimento</label>
+        <input
+          name="diaNascimento"
+          type="date"
+          class="form-control"
+          [(ngModel)]="this.userService.formData.BirthDate"
+          required
+          [class.invalid]="diaNascimento.invalid && diaNascimento.touched"
+          minlength="8"
+          maxlength="10"
+          #diaNascimento="ngModel"
+        />
+      </div>
+      
+      <div class="mb-3">
+        <label>CPF</label>
+        <input
+          name="cpf"
+          class="form-control"
+          placeholder="Ex.: 000.000.000-00"
+          [(ngModel)]="this.userService.formData.CPF"
+          required
+          [class.invalid]="cpf.invalid && cpf.touched"
+          minlength="11"
+          maxlength="14"
+          #cpf="ngModel"
+        />
+        <p *ngIf="cpf.invalid && cpf.touched" class="invalid">
+          O CPF deve conter no minimo 11 dígitos
+        </p>
+      </div>
 
-    <div class="col-md-6">
-      <label>Email</label>
-      <input
-        name="email"
-        type="email"
-        class="form-control"
-        [(ngModel)]="this.userService.formData.Email"
-        required
-        [class.invalid]="email.invalid && email.touched"
-        minlength="2"
-        maxlength="60"
-        pattern="[^ @]*@[^ @]*"
-        #email="ngModel"
-      />
-    </div>
+      <div class="mb-3">
+        <label>Email</label>
+        <input
+          name="email"
+          type="email"
+          class="form-control"
+          [(ngModel)]="this.userService.formData.Email"
+          required
+          [class.invalid]="email.invalid && email.touched"
+          minlength="2"
+          maxlength="60"
+          pattern="[^ @]*@[^ @]*"
+          #email="ngModel"
+        />
+      </div>
 
-    <div class="col-md-6">
-      <label>Crie uma senha</label>
-      <input
-        name="password"
-        type="password"
-        class="form-control"
-        required
-        [(ngModel)] = "this.userService.formData.Password"
-        [class.invalid]="password.invalid && password.touched"
-        minlength="6"
-        maxlength="60"
-        #password="ngModel"
-      />
-    </div>
+      <div class="mb-3">
+        <label>Crie uma senha</label>
+        <input
+          name="password"
+          type="password"
+          class="form-control"
+          required
+          [(ngModel)] = "this.userService.formData.Password"
+          [class.invalid]="password.invalid && password.touched"
+          minlength="6"
+          maxlength="60"
+          #password="ngModel"
+        />
+      </div>
 
-      <div class="col-md-6">
+      <div class="mb-3">
         <label>Corfirme sua senha</label>
         <input
           name="password2"
@@ -128,75 +129,76 @@
         />
       </div>
 
-    <div class="col-md-6">
-      <label>Bairro</label>
-      <select
-        class="form-select"
-        aria-label="Default select example"
-        name="bairro"
-        [(ngModel)]="this.userService.formData.District"
-        #bairro="ngModel"
-      >
-        <option selected>Selecione</option>
-        <option value="1">Centro</option>
-        <option value="2">Velha</option>
-        <option value="3">Vila Nova</option>
-      </select>
-    </div>
-    
+      <div class="mb-3">
+        <label>Bairro</label>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          name="bairro"
+          [(ngModel)]="this.userService.formData.District"
+          #bairro="ngModel"
+        >
+          <option selected>Selecione</option>
+          <option value="1">Centro</option>
+          <option value="2">Velha</option>
+          <option value="3">Vila Nova</option>
+        </select>
+      </div>
+      
 
-    <div class="col-md-6">
-      <label>Rua</label>
-      <input
-        name="rua"
-        type="email"
-        class="form-control"
-        placeholder="Ex: Rua general osorio"
-        [(ngModel)]="this.userService.formData.Street"
-        required
-        [class.invalid]="rua.invalid && rua.touched"
-        minlength="2"
-        maxlength="60"
-        #rua="ngModel"
-      />
-    </div>
-    
-    <div class="col-md-6">
-      <label>Numero da casa</label>
-      <input
-        name="numeroCasa"
-        class="form-control"
-        placeholder="Ex: 365"
-        [(ngModel)]="this.userService.formData.House_number"
-        required
-        [class.invalid]="numeroCasa.invalid && numeroCasa.touched"
-        minlength="2"
-        maxlength="60"
-        #numeroCasa="ngModel"
-      />
-    </div>
-    
-    <div>
-      <label>CEP</label>
-      <input
-        name="cep"
-        type="cep"
-        class="form-control"
-        placeholder="Ex.:00000-000"
-        [(ngModel)]="this.userService.formData.CEP"
-        required
-        [class.invalid]="cep.invalid && cep.touched"
-        minlength="8"
-        maxlength="8"
-        #cep="ngModel"
-      />
-    </div>
+      <div class="mb-3">
+        <label>Rua</label>
+        <input
+          name="rua"
+          type="email"
+          class="form-control"
+          placeholder="Ex: Rua general osorio"
+          [(ngModel)]="this.userService.formData.Street"
+          required
+          [class.invalid]="rua.invalid && rua.touched"
+          minlength="2"
+          maxlength="60"
+          #rua="ngModel"
+        />
+      </div>
+      
+      <div class="mb-3">
+        <label>Numero da casa</label>
+        <input
+          name="numeroCasa"
+          class="form-control"
+          placeholder="Ex: 365"
+          [(ngModel)]="this.userService.formData.House_number"
+          required
+          [class.invalid]="numeroCasa.invalid && numeroCasa.touched"
+          minlength="2"
+          maxlength="60"
+          #numeroCasa="ngModel"
+        />
+      </div>
+      
+      <div>
+        <label>CEP</label>
+        <input
+          name="cep"
+          type="cep"
+          class="form-control"
+          placeholder="Ex.:00000-000"
+          [(ngModel)]="this.userService.formData.CEP"
+          required
+          [class.invalid]="cep.invalid && cep.touched"
+          minlength="8"
+          maxlength="8"
+          #cep="ngModel"
+        />
+      </div>
 
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary" [disabled]="form.invalid" routerLink="/user-sign-up">
-        Salvar
-      </button>
-    </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid" routerLink="/user-sign-up">
+          Salvar
+        </button>
+      </div>
 
-  </form>
-</section>
+    </form>
+  </section>
+</div>

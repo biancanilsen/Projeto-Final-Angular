@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-menu',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(public userService: UserService) { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(form: any) {
+    this.update();
+  }
+  //PRECISA PEGAR O OBJETO DO USUARIO LOGADO
+  update() {
+    this.userService.updateUser(this.userService.formData);
+  }
+
+  postUser() {
+    this.userService.postUser();
+  }
 }
+

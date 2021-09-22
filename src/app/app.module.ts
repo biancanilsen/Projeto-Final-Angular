@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
+import { DemoDropdownAnimatedComponent } from './btn-dropdown/btn-dropdown.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 
 
@@ -23,6 +25,7 @@ import { UserMenuComponent } from './user-menu/user-menu.component';
     HomeComponent,
     UserLoginComponent,
     UserMenuComponent,
+    DemoDropdownAnimatedComponent,
     
   ],
   imports: [
@@ -30,7 +33,8 @@ import { UserMenuComponent } from './user-menu/user-menu.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    BsDropdownModule.forRoot()
   ],
   providers: [UserService, PetService],
   bootstrap: [AppComponent]
