@@ -14,8 +14,11 @@
         <!-- Example row of columns -->
         <div class="row">
           <div class="col-md-4" *ngFor=" let item of this.petService.list">
-            <h2>{{item.Name}}</h2>
-            <p></p>
+            <img src="../../assets/cachorro.jfif" class="card-img-top" alt="...">
+            <h2>nome{{item.Animal}}</h2>
+            <p>animal</p>
+            <p>raça</p>
+            <p>endereço</p>
             <p><a class="btn btn-secondary" href="#" role="button">Saiba mais &raquo;</a></p>
           </div>
           
