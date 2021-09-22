@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   constructor(public petService: PetService) { }
 
   ngOnInit(): void {
+    this.petService.getAllPets()
   }
 
 }
