@@ -64,7 +64,7 @@
       />
     </div>
     
-    <div>
+    <div class="mb-3">
       <label>CPF</label>
       <input
         name="cpf"
@@ -82,7 +82,7 @@
       </p>
     </div>
 
-    <div class="col-md-6">
+    <div class="mb-3">
       <label>Email</label>
       <input
         name="email"
@@ -98,7 +98,7 @@
       />
     </div>
 
-    <div class="col-md-6">
+    <div class="mb-3">
       <label>Crie uma senha</label>
       <input
         name="password"
@@ -113,7 +113,7 @@
       />
     </div>
 
-      <div class="col-md-6">
+      <div class="mb-3">
         <label>Corfirme sua senha</label>
         <input
           name="password2"
@@ -128,14 +128,16 @@
         />
       </div>
 
-    <div class="col-md-6">
-      <label>Bairro</label>
+    <div class="mb-3">
+      <label >Bairro</label>
+      <br>
       <select
         class="form-select"
         aria-label="Default select example"
         name="bairro"
         [(ngModel)]="this.userService.formData.District"
         #bairro="ngModel"
+        style="width: 100%; height: 50%; margin-left: 10px;"
       >
         <option selected>Selecione</option>
         <option value="1">Centro</option>
@@ -145,7 +147,7 @@
     </div>
     
 
-    <div class="col-md-6">
+    <div class="mb-3">
       <label>Rua</label>
       <input
         name="rua"
@@ -161,7 +163,7 @@
       />
     </div>
     
-    <div class="col-md-6">
+    <div class="mb-3">
       <label>Numero da casa</label>
       <input
         name="numeroCasa"
@@ -176,7 +178,7 @@
       />
     </div>
     
-    <div>
+    <div class="mb-3">
       <label>CEP</label>
       <input
         name="cep"
@@ -200,11 +202,4 @@
 
   </form>
 </section>
-<div class="mb-3">
-    <label for="formGroupExampleInput" class="form-label">Example label</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-  </div>
-  <div class="mb-3">
-    <label for="formGroupExampleInput2" class="form-label">Another label</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-  </div>
+

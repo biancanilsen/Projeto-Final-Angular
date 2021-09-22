@@ -130,13 +130,15 @@
       </div>
 
       <div class="mb-3">
-        <label>Bairro</label>
+        <label >Bairro</label>
+        <br>
         <select
           class="form-select"
           aria-label="Default select example"
           name="bairro"
           [(ngModel)]="this.userService.formData.District"
           #bairro="ngModel"
+          style="width: 50%; height: 50%; margin-left: 10px;"
         >
           <option selected>Selecione</option>
           <option value="1">Centro</option>
@@ -162,8 +164,8 @@
         />
       </div>
       
-      <div class="mb-3">
-        <label>Numero da casa</label>
+      <div class="col-md-2">
+        <label>Número</label>
         <input
           name="numeroCasa"
           class="form-control"
@@ -174,6 +176,7 @@
           minlength="2"
           maxlength="60"
           #numeroCasa="ngModel"
+          style="width: 100px;"
         />
       </div>
       
