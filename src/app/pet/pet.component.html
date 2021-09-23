@@ -8,7 +8,7 @@
         name="nome"
         class="form-control"
         placeholder="Digite o nome do pet"
-        [(ngModel)]="this.petService.formData.Name"
+        [(ngModel)]="this.petService.formData.name"
         required
         [class.invalid]="nome.invalid && nome.touched"
         minlength="2"
@@ -23,7 +23,7 @@
         name="animal"
         class="form-control"
         placeholder="Ex: cachorro"
-        [(ngModel)]="this.petService.formData.Animal"
+        [(ngModel)]="this.petService.formData.animal"
         required
         [class.invalid]="animal.invalid && animal.touched"
         minlength="1"
@@ -38,7 +38,7 @@
         name="raca"
         class="form-control"
         placeholder="Ex: viralata"
-        [(ngModel)]="this.petService.formData.Breed"
+        [(ngModel)]="this.petService.formData.breed"
         required
         [class.invalid]="raca.invalid && raca.touched"
         minlength="2"
@@ -53,7 +53,7 @@
         name="anos"
         class="form-control" 
         type="number"
-        [(ngModel)]="this.petService.formData.Age_years"
+        [(ngModel)]="this.petService.formData.age_years"
         required
         [class.invalid]="anos.invalid && anos.touched"
         minlength="1"
@@ -65,7 +65,7 @@
         name="meses"
         class="form-control" 
         type="number"
-        [(ngModel)]="this.petService.formData.Age_months"
+        [(ngModel)]="this.petService.formData.age_months"
         required
         [class.invalid]="meses.invalid && meses.touched"
         minlength="1"
@@ -79,7 +79,7 @@
       <select
       class="form-select"
       name="porte"
-      [(ngModel)]="this.petService.formData.Size"
+      [(ngModel)]="this.petService.formData.size"
       #porte="ngModel"
     >
       <option selected>Selecione</option>
