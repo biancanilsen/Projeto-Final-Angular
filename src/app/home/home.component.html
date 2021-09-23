@@ -13,9 +13,9 @@
       <div class="container">
         <!-- Example row of columns -->
         <div class="row">
-          <div class="col-md-4" *ngFor=" let item of this.petService.list">
+          <div class="col-md-4" *ngFor=" let pet of this.petService.list">
             <img src="../../assets/cachorro.jfif" class="card-img-top" alt="...">
-            <h2>nome{{item.Animal}}</h2>
+            <h2>nome {{pet.name}} </h2>
             <p>animal</p>
             <p>raça</p>
             <p>endereço</p>

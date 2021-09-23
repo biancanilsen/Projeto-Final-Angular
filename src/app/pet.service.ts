@@ -24,7 +24,7 @@ export class PetService {
 
   getPet(pet: Pet)
   {
-    return this.httpClient.get<Pet>(this.BASE_URL+ `/${pet.Id}`) 
+    return this.httpClient.get<Pet>(this.BASE_URL+ `/${pet.id}`) 
   }
 
   postPet(){
@@ -34,13 +34,13 @@ export class PetService {
   }
 
   updatePet(pet: Pet){
-    return this.httpClient.put<Pet>(this.BASE_URL+ `/${pet.Id}`, pet).subscribe( () => {
+    return this.httpClient.put<Pet>(this.BASE_URL+ `/${pet.id}`, pet).subscribe( () => {
       this.getAllPets();
     }); 
   }
 
   deletePet(pet:Pet){
-    return this.httpClient.delete<Pet>(this.BASE_URL+ `/${pet.Id}`).subscribe( () => {
+    return this.httpClient.delete<Pet>(this.BASE_URL+ `/${pet.id}`).subscribe( () => {
       this.getAllPets();
     })
   }
