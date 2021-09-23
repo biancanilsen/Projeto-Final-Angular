@@ -1,3 +1,4 @@
+import { User } from './user';
 import { Photo } from "./photo";
 
 export class Pet {
@@ -10,7 +11,7 @@ export class Pet {
     age_months: number = 0;
     size: string = ""; // porte, pequeno meido grande
     adopted: boolean = false; 
-    old_owner_id: string = "";
-    new_owner_id: string = "";
+    old_owner_id: User = new User();
+    new_owner_id: User = new User();
     photo: Photo[] = []; // baixar ft para colocar
 }
