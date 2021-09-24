@@ -1,5 +1,6 @@
 import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -8,12 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor(public userService: UserService) { }
+  constructor(public userService: UserService, private routerService: Router) { }
 
   ngOnInit(): void {}
   
   onSubmit(form : any){
       this.postUser(); 
+      this.routerService.navigateByUrl("/user-confirm")
   }
 
   update(){

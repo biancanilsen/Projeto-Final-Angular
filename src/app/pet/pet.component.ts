@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PetService } from '../pet.service';
 
 @Component({
@@ -8,15 +9,17 @@ import { PetService } from '../pet.service';
 })
 export class PetComponent implements OnInit {
 
-  constructor(public petService: PetService) { }
+  constructor(public petService: PetService, private routerService: Router) { }
 
   ngOnInit(): void {
   }
   onSubmit(form: any){
     this.postPet();
+    this.routerService.navigateByUrl('/pet-confirm')
   }
     update(){
       this.petService.updatePet(this.petService.formData);
+      
     }
   
     getPet(){
@@ -25,5 +28,6 @@ export class PetComponent implements OnInit {
     postPet(){
       this.petService.postPet();
     }
+    
   
 }
