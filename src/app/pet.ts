@@ -13,5 +13,5 @@ export class Pet {
     adopted: boolean = false; 
     old_owner_id: User = new User();
     new_owner_id: User = new User();
-    photo: Photo[] = []; // baixar ft para colocar
+    photos: Photo[] = []; // baixar ft para colocar
 }
