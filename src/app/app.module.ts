@@ -14,6 +14,8 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
 import { DemoDropdownAnimatedComponent } from './btn-dropdown/btn-dropdown.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { PetConfirmComponent } from './pet-confirm/pet-confirm.component';
+import { UserConfirmComponent } from './user-confirm/user-confirm.component';
 
 
 
@@ -26,6 +28,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     UserLoginComponent,
     UserMenuComponent,
     DemoDropdownAnimatedComponent,
+    PetConfirmComponent,
+    UserConfirmComponent,
     
   ],
   imports: [
