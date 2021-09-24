@@ -1,3 +1,4 @@
+import { UserService } from './../user.service';
 import { PetService } from './../pet.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public petService: PetService) { }
+  constructor(public petService: PetService, public userService: UserService) { }
 
   ngOnInit(): void {
-    this.petService.getAllPets()
+    this.petService.getAllPets();
+    this.userService.getLogged();
   }
 
 }
