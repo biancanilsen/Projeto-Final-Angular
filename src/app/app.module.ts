@@ -16,6 +16,7 @@ import { DemoDropdownAnimatedComponent } from './btn-dropdown/btn-dropdown.compo
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { PetConfirmComponent } from './pet-confirm/pet-confirm.component';
 import { UserConfirmComponent } from './user-confirm/user-confirm.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -38,7 +39,8 @@ import { UserConfirmComponent } from './user-confirm/user-confirm.component';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    RouterModule
   ],
   providers: [UserService, PetService],
   bootstrap: [AppComponent]
