@@ -15,11 +15,26 @@ export class UserService {
   public formData: User = new User();
   public isNew : boolean = false;
 
+  public logged: User = new User();
+
   getAllUsers(){
     this.httpClient.get<User[]>(this.BASE_URL ).subscribe((data) =>{
       console.log(data);
       this.list = data;
     })
+  }
+
+  getLogged(){
+    this.logged.Name = "Cleitin"
+    this.logged.CPF = "12345678910"
+    this.logged.District = "Progresso"
+    this.logged.Street = "Rua da Banana"
+    this.logged.Email = "cleitin@hotmail.com"
+    this.logged.House_number = "7"
+    this.logged.Id = -1
+
+
+
   }
 
   getUser(user: User)
