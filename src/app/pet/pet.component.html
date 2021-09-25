@@ -1,110 +1,115 @@
 <div class="header"></div>
-<section>
-  <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form)"style="margin-top: 100px;">
+<div class="jumbotron">
+  <section class="container">
+    <h1 class="row" style="padding: 30px;">Cadastro do Pet</h1>
+    <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form)"style="margin-top: 100px;">
+      
+      <div class="mb-3">
+        <label>Nome</label>
+        <input
+          name="nome"
+          class="form-control"
+          placeholder="Digite o nome do pet"
+          [(ngModel)]="this.petService.formData.name"
+          required
+          [class.invalid]="nome.invalid && nome.touched"
+          minlength="2"
+          maxlength="60"
+          #nome="ngModel"
+        />
+      </div>
+      
+      <div class="mb-3">
+        <label>Animal</label>
+        <input
+          name="animal"
+          class="form-control"
+          placeholder="Ex: cachorro"
+          [(ngModel)]="this.petService.formData.animal"
+          required
+          [class.invalid]="animal.invalid && animal.touched"
+          minlength="1"
+          maxlength="60"
+          #animal="ngModel"
+        />
+      </div>
     
-    <div class="mb-3">
-      <label>Nome</label>
-      <input
-        name="nome"
-        class="form-control"
-        placeholder="Digite o nome do pet"
-        [(ngModel)]="this.petService.formData.name"
-        required
-        [class.invalid]="nome.invalid && nome.touched"
-        minlength="2"
-        maxlength="60"
-        #nome="ngModel"
-      />
-    </div>
-    
-    <div class="mb-3">
-      <label>Animal</label>
-      <input
-        name="animal"
-        class="form-control"
-        placeholder="Ex: cachorro"
-        [(ngModel)]="this.petService.formData.animal"
-        required
-        [class.invalid]="animal.invalid && animal.touched"
-        minlength="1"
-        maxlength="60"
-        #animal="ngModel"
-      />
-    </div>
-   
-    <div>
-      <label>Raça</label>
-      <input
-        name="raca"
-        class="form-control"
-        placeholder="Ex: vira-lata"
-        [(ngModel)]="this.petService.formData.breed"
-        required
-        [class.invalid]="raca.invalid && raca.touched"
-        minlength="2"
-        maxlength="60"
-        #raca="ngModel"
-      />
-    </div>
+      <div class="mb-3">
+        <label>Raça</label>
+        <input
+          name="raca"
+          class="form-control"
+          placeholder="Ex: vira-lata"
+          [(ngModel)]="this.petService.formData.breed"
+          required
+          [class.invalid]="raca.invalid && raca.touched"
+          minlength="2"
+          maxlength="60"
+          #raca="ngModel"
+        />
+      </div>
 
-    <div>
-      <label>Idade</label>
-     <input
-        name="anos"
-        class="form-control" 
-        type="number"
-        [(ngModel)]="this.petService.formData.age_years"
-        required
-        [class.invalid]="anos.invalid && anos.touched"
-        minlength="1"
-        maxlength="2"
-        #anos="ngModel"
+      <div class="mb-3">
+        <label>Idade</label>
+      <input
+          name="anos"
+          class="form-control" 
+          type="number"
+          [(ngModel)]="this.petService.formData.age_years"
+          required
+          [class.invalid]="anos.invalid && anos.touched"
+          minlength="1"
+          maxlength="2"
+          #anos="ngModel"
+          style="width: 50%;"
+        >
+        <label>meses</label>
+        <input
+          name="meses"
+          class="form-control" 
+          type="number"
+          [(ngModel)]="this.petService.formData.age_months"
+          required
+          [class.invalid]="meses.invalid && meses.touched"
+          minlength="1"
+          maxlength="2"
+          #meses="ngModel"
+          style="width: 50%;"
+        >
+      </div>
+
+      <div lass="col-md-6">
+        <label>Porte</label>
+        <select
+        class="form-select"
+        name="porte"
+        [(ngModel)]="this.petService.formData.size"
+        #porte="ngModel"
       >
-      <label>meses</label>
-      <input
-        name="meses"
-        class="form-control" 
-        type="number"
-        [(ngModel)]="this.petService.formData.age_months"
-        required
-        [class.invalid]="meses.invalid && meses.touched"
-        minlength="1"
-        maxlength="2"
-        #meses="ngModel"
-      >
-    </div>
+        <option selected>Selecione</option>
+        <option value="1">Pequeno</option>
+        <option value="2">Médio</option>
+        <option value="3">Grande</option>
+      </select>
+      </div>
 
-    <div lass="col-md-6">
-      <label>Porte</label>
-      <select
-      class="form-select"
-      name="porte"
-      [(ngModel)]="this.petService.formData.size"
-      #porte="ngModel"
-    >
-      <option selected>Selecione</option>
-      <option value="1">Pequeno</option>
-      <option value="2">Médio</option>
-      <option value="3">Grande</option>
-    </select>
-    </div>
+      <div>
+        <label>Foto</label>
+        <input
+          name="foto"
+          class="form-control"
+          type="file"
+          [(ngModel)]="this.petService.formData.photos"
+          #foto="ngModel"
+        />
+      </div>  
 
-    <div>
-      <label>Foto</label>
-      <input
-        name="foto"
-        class="form-control"
-        type="file"
-        [(ngModel)]="this.petService.formData.photos"
-        #foto="ngModel"
-      />
-    </div>  
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid" >
+          Salvar
+        </button>
+      </div>
 
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary" [disabled]="form.invalid" >
-        Salvar
-      </button>
-    </div>
-
-  </form>
-</section>
+    </form>
+  </section>
+</div>

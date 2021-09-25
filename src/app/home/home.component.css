@@ -1,4 +1,18 @@
 body {
     padding-top: 3.5rem;
+    background-color: #6b737a;
+}
+.container{
+    width: 750px;
+    border-radius: 20%;
     
+    
+}
+.col-md-4{
+    margin: 0 auto 25px auto;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5%;
 }

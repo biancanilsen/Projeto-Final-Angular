@@ -1,3 +1,5 @@
+import { Pet } from "./pet";
+
 export class User {
     Id: number = 0;
     CPF : string  = '';
@@ -11,6 +13,7 @@ export class User {
     CEP: string = '';  
     BirthDate: Date = new Date();
     Password: string = '';
-    Adopted: boolean = false
-    Donated: boolean = false
+    Adopted: boolean = false;
+    Donated: boolean = false;
+    pets: Pet[] = [];
 }
