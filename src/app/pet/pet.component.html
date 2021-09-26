@@ -2,9 +2,9 @@
 <div class="jumbotron">
   <section class="container">
     <h1 class="row" style="padding: 30px;">Cadastro do Pet</h1>
-    <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form)"style="margin-top: 100px;">
+    <form class="row g-3 align-items-center" novalidate #form="ngForm" (submit)="onSubmit(form)">
       
-      <div class="mb-3">
+      <div class="col-md-6">
         <label>Nome</label>
         <input
           name="nome"
@@ -19,7 +19,7 @@
         />
       </div>
       
-      <div class="mb-3">
+      <div class="col-md-6">
         <label>Animal</label>
         <input
           name="animal"
@@ -34,7 +34,7 @@
         />
       </div>
     
-      <div class="mb-3">
+      <div class="col-md-6">
         <label>Raça</label>
         <input
           name="raca"
@@ -48,10 +48,10 @@
           #raca="ngModel"
         />
       </div>
-
-      <div class="mb-3">
-        <label>Idade</label>
-      <input
+      <div class="col-md-6" style="padding-top: 10px;">
+        
+        <label>Idade (anos / meses)</label>
+        <input 
           name="anos"
           class="form-control" 
           type="number"
@@ -61,10 +61,8 @@
           minlength="1"
           maxlength="2"
           #anos="ngModel"
-          style="width: 50%;"
-        >
-        <label>meses</label>
-        <input
+          style="width: 50%;">
+        <input 
           name="meses"
           class="form-control" 
           type="number"
@@ -74,17 +72,17 @@
           minlength="1"
           maxlength="2"
           #meses="ngModel"
-          style="width: 50%;"
-        >
+          style="width: 50%;">
       </div>
-
-      <div lass="col-md-6">
+      <div class="col-6">
         <label>Porte</label>
+        <br>
         <select
         class="form-select"
         name="porte"
         [(ngModel)]="this.petService.formData.size"
         #porte="ngModel"
+        
       >
         <option selected>Selecione</option>
         <option value="1">Pequeno</option>
@@ -93,7 +91,7 @@
       </select>
       </div>
 
-      <div>
+      <div class="col-md-6"style="padding-top: 10px;">
         <label>Foto</label>
         <input
           name="foto"
@@ -104,7 +102,7 @@
         />
       </div>  
 
-      <div class="col-12">
+      <div class="col-12" style="margin-left: 39%; padding-top: 20px;">
         <button type="submit" class="btn btn-primary" [disabled]="form.invalid" >
           Salvar
         </button>
