@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PetService } from '../pet.service';
-import { UserService } from '../user.service';
+import { PetService } from '../services/pet.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-pet',
@@ -16,9 +16,10 @@ export class PetComponent implements OnInit {
     this.userService.getLogged();
   }
   onSubmit(form: any){
+    this.petService.formData.current_owner = this.userService.logged
     this.postPet();
     this.routerService.navigateByUrl('/pet-confirm')
-    this.petService.formData.current_owner = this.userService.logged
+    
   }
     update(){
       this.petService.updatePet(this.petService.formData);

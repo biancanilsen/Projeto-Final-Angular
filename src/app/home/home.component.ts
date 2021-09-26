@@ -1,5 +1,5 @@
-import { UserService } from './../user.service';
-import { PetService } from './../pet.service';
+import { UserService } from '../services/user.service';
+import { PetService } from './../services/pet.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

@@ -1,5 +1,5 @@
-import { PetService } from './pet.service';
-import { UserService } from './user.service';
+import { PetService } from './services/pet.service';
+import { UserService } from './services/user.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { PetConfirmComponent } from './pet-confirm/pet-confirm.component';
 import { UserConfirmComponent } from './user-confirm/user-confirm.component';
 import { RouterModule } from '@angular/router';
+import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
 
 
 
@@ -31,6 +32,7 @@ import { RouterModule } from '@angular/router';
     DemoDropdownAnimatedComponent,
     PetConfirmComponent,
     UserConfirmComponent,
+    PhotoUploadComponent,
     
   ],
   imports: [

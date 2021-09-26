@@ -7,6 +7,7 @@ import { PetComponent } from './pet/pet.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
 import { PetConfirmComponent } from './pet-confirm/pet-confirm.component';
 import { UserConfirmComponent } from './user-confirm/user-confirm.component';
+import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'user-login', component: UserLoginComponent },
   { path: 'user-menu', component: UserMenuComponent },
   { path: 'pet-confirm', component: PetConfirmComponent },
-  { path: 'user-confirm', component: UserConfirmComponent }
+  { path: 'user-confirm', component: UserConfirmComponent },
+  { path: 'photo-upload', component: PhotoUploadComponent }
 
 ];
 
