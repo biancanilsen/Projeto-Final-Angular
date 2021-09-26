@@ -1,0 +1,16 @@
+.row{
+    width: 1000px;
+    background: rgb(235, 235, 235);
+    margin-left: 10%;
+}
+.col-md-6{
+    padding: 30px;
+    width: 400px;
+}
+.description{
+    border-style: groove;
+    border-radius: 2%;
+}
+img{
+    width: 400px;
+}

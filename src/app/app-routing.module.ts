@@ -8,6 +8,7 @@ import { UserMenuComponent } from './user-menu/user-menu.component';
 import { PetConfirmComponent } from './pet-confirm/pet-confirm.component';
 import { UserConfirmComponent } from './user-confirm/user-confirm.component';
 import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
+import { PetPageComponent } from './pet-page/pet-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'user-menu', component: UserMenuComponent },
   { path: 'pet-confirm', component: PetConfirmComponent },
   { path: 'user-confirm', component: UserConfirmComponent },
-  { path: 'photo-upload', component: PhotoUploadComponent }
+  { path: 'photo-upload', component: PhotoUploadComponent },
+  { path: 'pet-page', component: PetPageComponent }
 
 ];
 
