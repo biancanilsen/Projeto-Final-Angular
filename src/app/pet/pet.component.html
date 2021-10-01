@@ -91,18 +91,22 @@
       </select>
       </div>
 
-      <div class="col-md-6"style="padding-top: 10px;">
-        <label>Foto</label>
+      <div class="custom-file col-md-6">
+        <label>Fotos</label>
         <input
+          id= "customFileLabel" multiple
           name="foto"
-          class="form-control"
+          class="custom-file"
           type="file"
           [(ngModel)]="this.petService.formData.photos"
           #foto="ngModel"
         />
+        <div style="margin-top: 10px">
+          <button type="button class="btn btn-primary" (click)="onUpload()" [disabled]= "!files">Upload</button>
+        </div>
       </div>  
 
-      <div class="col-12" style="margin-left: 39%; padding-top: 20px;">
+      <div class="col-12" style="margin-left: 39%; padding-top: 50px;">
         <button type="submit" class="btn btn-primary" [disabled]="form.invalid" >
           Salvar
         </button>

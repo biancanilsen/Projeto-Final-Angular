@@ -1,5 +1,7 @@
+import { UploadFileComponent } from './upload-file/upload-file/upload-file.component';
+import { UploadFileModule } from './upload-file/upload-file.module';
 import { UserLoginComponent } from './user-login/user-login.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
@@ -19,8 +21,11 @@ const routes: Routes = [
   { path: 'pet-confirm', component: PetConfirmComponent },
   { path: 'user-confirm', component: UserConfirmComponent },
   { path: 'photo-upload', component: PhotoUploadComponent },
-  { path: 'pet-page', component: PetPageComponent }
-
+  { path: 'pet-page', component: PetPageComponent },
+  { path: 'upload', component: UploadFileComponent}
+  
+ 
+  
 ];
 
 @NgModule({
