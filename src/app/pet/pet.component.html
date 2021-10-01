@@ -2,7 +2,7 @@
 <div class="jumbotron">
   <section class="container">
     <h1 class="row" style="padding: 30px;">Cadastro do Pet</h1>
-    <form class="row g-3 align-items-center" novalidate #form="ngForm" (submit)="onSubmit(form)">
+    <form class="row g-3 align-items-center" novalidate #form="ngForm" (submit)="onSubmit(form)" >
       
       <div class="col-md-6">
         <label>Nome</label>
@@ -102,12 +102,12 @@
           #foto="ngModel"
         />
         <div style="margin-top: 10px">
-          <button type="button class="btn btn-primary" (click)="onUpload()" [disabled]= "!files">Upload</button>
+          <button type="button" class="btn btn-primary" (click)="onUpload()" [disabled]= "!foto.touched">Enviar Foto</button>
         </div>
       </div>  
 
-      <div class="col-12" style="margin-left: 39%; padding-top: 50px;">
-        <button type="submit" class="btn btn-primary" [disabled]="form.invalid" >
+      <div class="col-6" style="padding-top: 50px;">
+        <button type="submit" class="btn btn-primary"  [disabled]="form.invalid" >
           Salvar
         </button>
       </div>
