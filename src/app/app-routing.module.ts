@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'pet-confirm', component: PetConfirmComponent },
   { path: 'user-confirm', component: UserConfirmComponent },
   { path: 'photo-upload', component: PhotoUploadComponent },
-  { path: 'pet-page', component: PetPageComponent }
+  { path: 'pet-page/:id', component: PetPageComponent }
 
 ];
 

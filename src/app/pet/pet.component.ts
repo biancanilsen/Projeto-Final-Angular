@@ -27,7 +27,7 @@ export class PetComponent implements OnInit {
     }
   
     getPet(){
-      this.petService.getPet(this.petService.formData);
+      this.petService.getPet(this.petService.formData.id);
     }
     postPet(){
       this.petService.postPet();
