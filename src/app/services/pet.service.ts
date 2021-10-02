@@ -20,9 +20,6 @@ export class PetService {
       this.list = data.$values as Pet[];
     });
   }
-  refresh(){
-    this.httpClient.get<Pet[]>(this.BASE_URL).toPromise().then(res => this.list = res as Pet[])
-  }
 
   getPet(id: number)
   {

@@ -16,7 +16,7 @@ export class PetComponent implements OnInit {
     this.userService.getLogged();
   }
   onSubmit(form: any){
-    this.petService.formData.current_owner = this.userService.logged
+    this.petService.formData.current_owner_id = this.userService.logged.Id
     this.postPet();
     this.routerService.navigateByUrl('/pet-confirm')
     

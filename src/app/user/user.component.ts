@@ -23,7 +23,7 @@ export class UserComponent implements OnInit {
   }
 
   getUser(){
-    this.userService.getUser(this.userService.formData);
+    this.userService.getUser(this.userService.formData.Id);
   }
 
   postUser(){

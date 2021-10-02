@@ -31,15 +31,18 @@ export class UserService {
     this.logged.Street = "Rua da Banana"
     this.logged.Email = "cleitin@hotmail.com"
     this.logged.House_number = "7"
-    this.logged.Id = -1
+    this.logged.Id = 10
 
 
 
   }
 
-  getUser(user: User)
+  getUser(id: number)
   {
-    return this.httpClient.get<User>(this.BASE_URL+ `/${user.Id}`) 
+    return this.httpClient.get<User>(this.BASE_URL+ `/${id}`).subscribe((data) =>
+    {
+      this.formData = data;
+    })
   }
 
   postUser(){

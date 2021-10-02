@@ -11,6 +11,7 @@ export class Pet {
     age_months: number = 0;
     size: string = ""; // porte, pequeno meido grande
     adopted: boolean = false; 
-    current_owner: User = new User();
+    current_owner_id: number = 0;
     photos: Photo[] = []; // baixar ft para colocar
+    description: string = "";
 }
