@@ -50,3 +50,15 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.form-signin label[for="floatingInput"]{
+  margin-right: 100%;
+  
+}
+.form-signin label[for="floatingPassword"]{
+  margin-right: 100%;
+  padding-bottom: 20px;
+}
+
+form{
+  margin-top: 100px;
+}

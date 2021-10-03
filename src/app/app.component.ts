@@ -14,9 +14,11 @@ export class AppComponent {
   user: User[] = [];
   pet: Pet[] = [];
 
+  loggedUsers: User[] = [];
+
   constructor(private userServise: UserService, private petServise: PetService) {}
   
   ngOnInit(): void{
-
+    
   }
 }
