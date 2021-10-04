@@ -19,6 +19,6 @@ export class AppComponent {
   constructor(private userServise: UserService, private petServise: PetService) {}
   
   ngOnInit(): void{
-    
+    this.userServise.getAllUsers
   }
 }
