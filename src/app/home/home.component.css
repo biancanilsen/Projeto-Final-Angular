@@ -3,16 +3,14 @@ body {
     background-color: #6b737a;
 }
 .container{
-    width: 750px;
+    width: 7500px;
     border-radius: 20%;
-    
-    
 }
-.col-md-4{
+.col-md-3{
     margin: 0 auto 25px auto;
     margin-left: 5px;
     margin-right: 5px;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 5%;
 }
