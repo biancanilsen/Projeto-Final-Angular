@@ -11,13 +11,36 @@
 .description{
     border-style: groove;
     border-radius: 5%;
-    
-
-
 } 
 p{
     width: 350px;
 }
 img{
     width: 400px;
+}
+
+div > div {
+    display: inline-block;
+   
+}
+.buttonAdotar{
+    border:1px solid;
+    padding: 11px 21px; 
+    vertical-align: middle;
+    background:#20878f; 
+    color:white;
+    border-radius:6px; 
+    font-size: 20px; 
+    font-family:helvetica, serif;
+    text-decoration:none;
+}
+.buttonReportar{
+    border:1px solid; 
+    padding: 11px 21px; 
+    vertical-align: middle; 
+    background:#d42008; 
+    color:white;border-radius:6px; 
+    font-size: 20px; 
+    font-family:helvetica, serif;
+    text-decoration:none;
 }

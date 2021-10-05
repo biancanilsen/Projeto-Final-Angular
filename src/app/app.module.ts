@@ -19,6 +19,8 @@ import { UserConfirmComponent } from './user-confirm/user-confirm.component';
 import { RouterModule } from '@angular/router';
 import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
 import { PetPageComponent } from './pet-page/pet-page.component';
+import { AdoptPageComponent } from './adopt-page/adopt-page.component';
+import { ReportPageComponent } from './report-page/report-page.component';
 
 
 
@@ -35,6 +37,8 @@ import { PetPageComponent } from './pet-page/pet-page.component';
     UserConfirmComponent,
     PhotoUploadComponent,
     PetPageComponent,
+    AdoptPageComponent,
+    ReportPageComponent,
     
   ],
   imports: [
