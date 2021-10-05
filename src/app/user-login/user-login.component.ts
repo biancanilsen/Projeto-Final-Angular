@@ -22,17 +22,19 @@ export class UserLoginComponent implements OnInit {
   }
 
   verifyLogin(): void {
-    
-    const list: User[] = this.userService.list;
-    for (let index = 0; index < list.length; index++) {
+  
+    let user_list: User[] = this.userService.list;
+    for (let index = 0; index < user_list.length; index++) {
 
-      if (list[index].Email == this.form_email && list[index].Password == this.form_password) {
-        list[index].logged = true;
-        this.userService.loggedUsers.push(list[index])
+      if (user_list[index].Email == this.form_email && user_list[index].Password == this.form_password) {
+        user_list[index].logged = true;
+        this.userService.loggedUsers.push(user_list[index])
         this.routerService.navigateByUrl("/")
       }
-      debugger
+      
+      
     }
+    
     
   }
 

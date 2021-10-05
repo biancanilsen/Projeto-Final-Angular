@@ -16,3 +16,9 @@ body {
     background-color: white;
     border-radius: 5%;
 }
+.jumbotron{
+    background-image: url(../../assets/home-background.jpeg);
+    background-size: cover;
+    
+
+}

@@ -102,6 +102,15 @@
         />
       </div>  
 
+      <div class="col-12">
+        <label>Descrição</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+        name="description"
+        [(ngModel)]="this.petService.formData.description"
+        #description = "ngModel"
+        ></textarea>
+      </div>
+
       <div class="col-12" style="margin-left: 39%; padding-top: 20px;">
         <button type="submit" class="btn btn-primary" [disabled]="form.invalid" >
           Salvar
