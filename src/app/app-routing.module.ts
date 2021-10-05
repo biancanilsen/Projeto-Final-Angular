@@ -1,3 +1,5 @@
+import { ReportPageComponent } from './report-page/report-page.component';
+import { AdoptPageComponent } from './adopt-page/adopt-page.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -19,7 +21,9 @@ const routes: Routes = [
   { path: 'pet-confirm', component: PetConfirmComponent },
   { path: 'user-confirm', component: UserConfirmComponent },
   { path: 'photo-upload', component: PhotoUploadComponent },
-  { path: 'pet-page/:id', component: PetPageComponent }
+  { path: 'pet-page/:id', component: PetPageComponent },
+  { path: 'adopt-page', component: AdoptPageComponent },
+  { path: 'report-page', component: ReportPageComponent },
 
 ];
 
