@@ -13,7 +13,16 @@
             <p>Dono: {{this.petService.formData.current_owner_id}}</p>
             <p>Endereço: {{this.user.Street}}, n° {{this.user.House_number}} - {{this.user.District}}</p>
             <p>Descrição: {{this.petService.formData.description}}</p>
+            <div>
+                <div>
+                    <div>
+                        <a class="buttonAdotar"[routerLink]="['/adopt-page/']">Adotar</a>
+                    </div>
+                    <div>
+                        <a class="buttonReportar" [routerLink]="['/report-page/']">Reportar</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    
+    </div>   
 </div>
