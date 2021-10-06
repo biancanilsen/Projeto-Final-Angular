@@ -11,6 +11,7 @@ export class UserComponent implements OnInit {
 
   constructor(public userService: UserService, private routerService: Router) { }
 
+  
   ngOnInit(): void {}
   
   onSubmit(form : any){
@@ -30,3 +31,4 @@ export class UserComponent implements OnInit {
     this.userService.postUser();
   }
 }
+
