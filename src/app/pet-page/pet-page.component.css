@@ -25,7 +25,7 @@ div > div {
 }
 .buttonAdotar{
     border:1px solid;
-    padding: 11px 21px; 
+    padding: 3px 10px; 
     vertical-align: middle;
     background:#20878f; 
     color:white;
@@ -33,10 +33,11 @@ div > div {
     font-size: 20px; 
     font-family:helvetica, serif;
     text-decoration:none;
+    text-align: center
 }
 .buttonReportar{
     border:1px solid; 
-    padding: 11px 21px; 
+    padding: 3px 10px; 
     vertical-align: middle; 
     background:#d42008; 
     color:white;border-radius:6px; 
@@ -44,3 +45,4 @@ div > div {
     font-family:helvetica, serif;
     text-decoration:none;
 }
+
