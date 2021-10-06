@@ -1,0 +1,37 @@
+.container{
+    margin-top: 143px;
+    width: 500px;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-style: groove;
+    border-radius: 5%;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.buttonReportConfirm
+{
+    border:1px solid;
+    padding: 3px 10px; 
+    vertical-align: middle;
+    background:#20878f; 
+    color:white;
+    border-radius:6px; 
+    font-size: 20px; 
+    font-family:helvetica, serif;
+    text-decoration:none;
+}
+
+.buttonReportCancel
+{
+    border:1px solid;
+    padding: 3px 10px; 
+    vertical-align: middle;
+    background:#d64c22; 
+    color:white;
+    border-radius:6px; 
+    font-size: 20px; 
+    font-family:helvetica, serif;
+    text-decoration:none;
+}
