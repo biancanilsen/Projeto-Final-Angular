@@ -15,8 +15,11 @@ export class PetComponent implements OnInit {
   constructor(public petService: PetService, public userService: UserService, private routerService: Router,
     private photoUploadService: PhotoUploadService) { }
 
+  
   ngOnInit(): void {
     this.userService.getLogged();
+
+    
   }
   onSubmit(form: any) {
     this.petService.formData.current_owner_id = this.userService.logged.Id
@@ -38,18 +41,17 @@ export class PetComponent implements OnInit {
 
   fileToUpload: any = null;
 
-  handleFileInput(files: FileList) {
-    this.fileToUpload = files.item(0);
+  handleFileInput(event: Event) {
+    const element = event.currentTarget as HTMLInputElement;
+    let files :FileList | null = element.files;
+    this.fileToUpload = files?.item(0);
   }
 
   uploadFileToActivity() {
-    this.photoUploadService.postFile(this.fileToUpload).subscribe(data => {
-      // do something, if upload success
-      }, error => {
-        console.log(error);
-      });
+    this.photoUploadService.postFile(this.fileToUpload);
   }
 
   
+
 }
-}
+
