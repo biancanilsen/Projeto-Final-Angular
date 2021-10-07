@@ -13,3 +13,10 @@
     align-items: center;
     padding: 10px;
 }
+.form-control{
+    float: left;
+}
+.h1.row{
+    margin-left: auto;
+    margin-right: auto;
+}

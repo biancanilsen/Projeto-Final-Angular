@@ -39,11 +39,6 @@ export class UserService {
     this.logged.Password = "senhadaoradocleitin"
     this.logged.pets = [];
     this.logged.Id = 1
-    
-
-
-
-
   }
 
   getUser(id: number)
