@@ -62,3 +62,18 @@ body {
 form{
   margin-top: 100px;
 }
+
+.container{
+  width: 500px;
+  margin-left: 32%;
+  margin-top: 5%;
+  margin-right: 25%;
+  border-style: groove;
+  border-radius: 5%;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.form{
+  border-style: groove;
+}
