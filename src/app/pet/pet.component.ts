@@ -42,14 +42,14 @@ export class PetComponent implements OnInit {
     this.fileToUpload = files.item(0);
   }
 
-  uploadFileToActivity() {
+  /*uploadFileToActivity() {
     this.photoUploadService.postFile(this.fileToUpload).subscribe(data => {
       // do something, if upload success
       }, error => {
         console.log(error);
       });
-  }
+  }*/
 
   
 }
-}
+

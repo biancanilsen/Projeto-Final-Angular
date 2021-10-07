@@ -12,4 +12,7 @@ export class ReportPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  confirmReport(){
+    alert ("O seu reporte foi encaminhado para nossos administradores e será analisado!")
+  }
 }

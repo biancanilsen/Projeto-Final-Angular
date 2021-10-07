@@ -18,8 +18,8 @@
                 <label for="disabledTextInput" class="form-label">Descrição do problema:</label>
                 <input type="text" id="disabledTextInput" class="form-control" placeholder="Descreva o problema"/>
             </div>
-            <button type="button" class="buttonReportConfirm">Confirmar</button>
-            <button type="button" class="buttonReportCancel">Cancelar</button>
+            <button type="button" class="buttonReportConfirm" (click)="confirmReport()">Confirmar</button>
+            <button type="button" class="buttonReportCancel" [routerLink]= "['/']">Cancelar</button>
         </fieldset>
     </section>
   </form>
