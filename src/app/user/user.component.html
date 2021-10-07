@@ -36,19 +36,39 @@
       <div class="mb-3">
         <label>Telefone</label>
         <input
-          name="telefone"
-          class="form-control"
-          placeholder="(00) 00000-0000"
-          [(ngModel)]="this.userService.formData.Phone"
-          required
-          [class.invalid]="telefone.invalid && telefone.touched"
-          minlength="11"
-          maxlength="15"
-          #telefone="ngModel"
-        />
-        <p *ngIf="telefone.invalid && telefone.touched" class="invalid">
-          O telefone deve conter no minimo 11 dígitos!
-        </p>
+                class="form-control form-control"
+                placeholder="(__) _____-____"
+                name="phone"
+                #phone="ngModel"
+                [(ngModel)]="this.userService.formData.Phone"
+                onkeyup="
+                            var phone = this.value;
+                            if (phone.match(/^[A-Z]|[a-z]$/) !== null){
+                                this.value = '';
+                            }"
+                onkeydown="
+                            var phone = this.value;
+                            if (window.event.keyCode == 8) { }
+                            else if (phone.match(/^[A-Z]|[a-z]$/) !== null){
+                                this.value = ' ';
+                            }
+                            else if (phone.match(/^\d$/) !== null){
+                                this.value = '(' + phone;
+                            }
+                            else if (phone.match(/^\(\d{2}$/) !== null){
+                                this.value = phone + ') ';
+                            }
+                            else if (phone.match(/^\(\d{2}\) \d{5}$/) !== null) {
+                                this.value = phone + '-';
+                            }"
+                required
+                maxlength="15"
+                minlength="15"
+                [class.invalid]="phone.invalid && phone.touched"
+              />
+              <p *ngIf="phone.invalid && phone.touched" class="invalid">
+                O telefone deve conter no minimo 11 dígitos!
+              </p>
       </div>
 
       <div class="mb-3">
@@ -69,16 +89,33 @@
       <div class="mb-3">
         <label>CPF</label>
         <input
-          name="cpf"
-          class="form-control"
-          placeholder="Ex.: 000.000.000-00"
-          [(ngModel)]="this.userService.formData.CPF"
-          required
-          [class.invalid]="cpf.invalid && cpf.touched"
-          minlength="11"
-          maxlength="14"
-          #cpf="ngModel"
-        />
+                class="form-control form-control"
+                placeholder="___.___.___-__"
+                name="cpf"
+                #cpf="ngModel"
+                [(ngModel)]="this.userService.formData.CPF"
+                onkeyup="
+                            var cpf = this.value;
+                            if (cpf.match(/^[A-Z]|[a-z]$/) !== null){
+                                this.value = '';
+                            }"
+                onkeydown="
+                            var cpf = this.value;
+                            if (window.event.keyCode == 8) { }
+                            else if (cpf.match(/^\d{3}$/) !== null){
+                                this.value = cpf + '.';
+                            }
+                            else if (cpf.match(/^\d{3}\.\d{3}$/) !== null){
+                                this.value = cpf + '.';
+                            }
+                            else if (cpf.match(/^\d{3}\.\d{3}\.\d{3}$/) !== null) {
+                                this.value = cpf + '-';
+                            }"
+                required
+                minlength="14"
+                maxlength="14"
+                [class.invalid]="cpf.invalid && cpf.touched"
+              />
         <p *ngIf="cpf.invalid && cpf.touched" class="invalid">
           O CPF deve conter no minimo 11 dígitos
         </p>
@@ -98,38 +135,36 @@
           pattern="[^ @]*@[^ @]*"
           #email="ngModel"
         />
+        <p *ngIf="email.invalid && email.touched" class="invalid">
+          Email invalido
+        </p>
       </div>
 
       <div class="mb-3">
         <label>Crie uma senha</label>
         <input
-          name="password"
+          name="password1"
           type="password"
           class="form-control"
+          [(ngModel)] = "this.password1"
           required
-          [(ngModel)] = "this.userService.formData.Password"
-          [class.invalid]="password.invalid && password.touched"
           minlength="6"
-          maxlength="60"
-          #password="ngModel"
+          maxlength="60"         
         />
-      </div>
-
-      <div class="mb-3">
         <label>Corfirme sua senha</label>
         <input
           name="password2"
           type="password"
           class="form-control"
-          [(ngModel)]="this.userService.formData.Password"
           required
-          [class.invalid]="password2.invalid && password2.touched"
+          *ngIf="password1"
+          [(ngModel)]="this.userService.formData.Password"
+          [class.invalid]="password2.invalid && password2.touched "
           minlength="6"
           maxlength="60"
           #password2="ngModel"
         />
       </div>
-
       <div class="mb-3">
         <label >Bairro</label>
         <br>
@@ -209,8 +244,8 @@
           [(ngModel)]="this.userService.formData.House_number"
           required
           [class.invalid]="numeroCasa.invalid && numeroCasa.touched"
-          minlength="2"
-          maxlength="60"
+          minlength="1"
+          maxlength="4"
           #numeroCasa="ngModel"
           style="width: 100px;"
         />
@@ -218,18 +253,32 @@
       
       <div>
         <label>CEP</label>
+        
         <input
-          name="cep"
-          type="cep"
-          class="form-control"
-          placeholder="Ex.:00000-000"
-          [(ngModel)]="this.userService.formData.CEP"
-          required
-          [class.invalid]="cep.invalid && cep.touched"
-          minlength="8"
-          maxlength="8"
-          #cep="ngModel"
-        />
+        class="form-control"
+                placeholder="_____-___"
+                name="cep"
+                #cep="ngModel"
+                [(ngModel)]="this.userService.formData.CEP"
+                onkeyup="
+                            var cep = this.value;
+                            if (cep.match(/^[A-Z]|[a-z]$/) !== null){
+                                this.value = '';
+                            }"
+                onkeydown="
+                            var cep = this.value;
+                            if (window.event.keyCode == 8) { }
+                            else if (cep.match(/^\d{5}$/) !== null){
+                                this.value = cep + '-';
+                            }"
+                required
+                minlength="9"
+                maxlength="9"
+                [class.invalid]="cep.invalid && cep.touched"
+              />
+        <p *ngIf="cep.invalid && cep.touched" class="invalid">
+          O Cep invalido
+        </p>
       </div>
 
       <div class="col-12">

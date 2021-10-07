@@ -1,7 +1,7 @@
 <div class="header"></div>
 <div class="jumbotron">
   <section class="container">
-    <h1 class="row" style="padding: 30px;">Cadastro do Pet</h1>
+    <h1 class="row" style="padding: 30px;text-align:center">Cadastro do Pet</h1>
     <form class="row g-3 align-items-center" novalidate #form="ngForm" (submit)="onSubmit(form)">
       
       <div class="col-md-6">
@@ -84,8 +84,7 @@
         #porte="ngModel"
         
       >
-        <option selected>Selecione</option>
-        <option value="1">Pequeno</option>
+        <option selected value="1">Pequeno</option>
         <option value="2">Médio</option>
         <option value="3">Grande</option>
       </select>
