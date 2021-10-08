@@ -20,3 +20,15 @@
     margin-left: auto;
     margin-right: auto;
 }
+.container{
+    background-image: url(../../assets/CardsPetRegistrationBackgroundPhotoo.png);
+    background-size: cover;
+    height: 100%;
+    color: black;
+  }
+.jumbotron{
+    background-image: url(../../assets/cards-background-2.jpeg);
+    background-size: cover;
+    height: 100%;
+  }
+
