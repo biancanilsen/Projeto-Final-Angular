@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 @Injectable({
 	providedIn: 'root'
@@ -11,10 +11,16 @@ export class PhotoUploadService {
 
 	constructor(private http: HttpClient) { }
 
+	
+	
 	postFile(fileToUpload: File): void {
+		debugger	
 		const formData: FormData = new FormData();
 		formData.append('fileKey', fileToUpload, fileToUpload.name);
-		 this.http.post(this.baseApiUrl, formData).subscribe(data => {
+		const httpOptions = {
+			headers: new HttpHeaders({'Content-Type': 'application/json'})
+		  }
+		 this.http.post(this.baseApiUrl, formData, httpOptions).subscribe(data => {
 			console.log(data)
 		});
 	}

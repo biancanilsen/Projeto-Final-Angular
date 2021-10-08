@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PhotoUploadComponent } from '../photo-upload/photo-upload.component';
@@ -24,8 +25,8 @@ export class PetComponent implements OnInit {
   onSubmit(form: any) {
     this.petService.formData.current_owner_id = this.userService.logged.Id
     this.postPet();
-    this.routerService.navigateByUrl('/pet-confirm')
-
+    this.routerService.navigateByUrl('/pet-confirm');
+    this.uploadFileToActivity();
   }
   update() {
     this.petService.updatePet(this.petService.formData);
@@ -48,6 +49,7 @@ export class PetComponent implements OnInit {
   }
 
   uploadFileToActivity() {
+    
     this.photoUploadService.postFile(this.fileToUpload);
   }
 
