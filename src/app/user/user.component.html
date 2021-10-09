@@ -191,7 +191,7 @@
           type="email"
           class="form-control"
           placeholder="Ex: Rua Bahia"
-          [(ngModel)]="this.userService.formData.Street"
+          [(ngModel)]="this.userService.logged.Street"
           required
           [class.invalid]="rua.invalid && rua.touched"
           minlength="2"
@@ -206,7 +206,7 @@
           name="numeroCasa"
           class="form-control"
           placeholder="Ex: 000"
-          [(ngModel)]="this.userService.formData.House_number"
+          [(ngModel)]="this.userService.logged.House_number"
           required
           [class.invalid]="numeroCasa.invalid && numeroCasa.touched"
           minlength="2"
@@ -223,7 +223,7 @@
           type="cep"
           class="form-control"
           placeholder="Ex.:00000-000"
-          [(ngModel)]="this.userService.formData.CEP"
+          [(ngModel)]="this.userService.logged.CEP"
           required
           [class.invalid]="cep.invalid && cep.touched"
           minlength="8"
@@ -234,7 +234,7 @@
 
       <div class="col-12">
         <button type="submit" class="btn btn-primary" [disabled]="form.invalid" routerLink="/user-sign-up">
-          Salvar
+          Atualizar
         </button>
       </div>
 
