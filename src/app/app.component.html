@@ -1,5 +1,5 @@
 <router-outlet></router-outlet>
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
   <a class="navbar-brand" href="#">GetPet</a>
   <button
     class="navbar-toggler"
@@ -35,11 +35,6 @@
           aria-expanded="false"
           >Dropdown</a
         >
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
       </li>
     </ul>
   </div>
@@ -58,7 +53,7 @@
       <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu"
           role="menu" aria-labelledby="button-animated">
         <li role="menuitem"><a class="dropdown-item" href="#">Editar pets</a></li>
-        <li role="menuitem"><a class="dropdown-item" href="#">Minhas informações</a>
+        <li role="menuitem"><a class="dropdown-item" routerLink="/user-menu">Minhas informações</a>
         </li>
         <li role="menuitem"><a class="dropdown-item" href="#">Something else
           here</a></li>

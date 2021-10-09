@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Photo } from '../domain/photo';
 @Injectable({
 	providedIn: 'root'
 })
@@ -13,14 +14,13 @@ export class PhotoUploadService {
 
 	
 	
-	postFile(fileToUpload: File): void {
-		debugger	
-		const formData: FormData = new FormData();
-		formData.append('fileKey', fileToUpload, fileToUpload.name);
+	postFile(photoToUpload: Photo): void {
+			
 		const httpOptions = {
 			headers: new HttpHeaders({'Content-Type': 'application/json'})
 		  }
-		 this.http.post(this.baseApiUrl, formData, httpOptions).subscribe(data => {
+		  debugger;
+		 this.http.post(this.baseApiUrl, photoToUpload, httpOptions).subscribe(data => {
 			console.log(data)
 		});
 	}

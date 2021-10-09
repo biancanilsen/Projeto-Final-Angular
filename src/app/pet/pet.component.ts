@@ -1,6 +1,8 @@
 import { HttpHeaders } from '@angular/common/http';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Photo } from '../domain/photo';
 import { PhotoUploadComponent } from '../photo-upload/photo-upload.component';
 import { PetService } from '../services/pet.service';
 import { PhotoUploadService } from '../services/photo-upload.service';
@@ -40,17 +42,21 @@ export class PetComponent implements OnInit {
     this.petService.postPet();
   }
 
-  fileToUpload: any = null;
+  photoToUpload: Photo = new Photo;
 
   handleFileInput(event: Event) {
+
     const element = event.currentTarget as HTMLInputElement;
     let files :FileList | null = element.files;
-    this.fileToUpload = files?.item(0);
+    this.photoToUpload.PhotoPath = files?.item(0)?.name as string;
+    this.photoToUpload.PhotoContent = files?.item(0) as File;
+    this.petService.formData.photos.push(this.photoToUpload)
+    debugger
   }
 
   uploadFileToActivity() {
     
-    this.photoUploadService.postFile(this.fileToUpload);
+    this.photoUploadService.postFile(this.photoToUpload);
   }
 
   
