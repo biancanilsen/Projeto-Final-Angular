@@ -1,7 +1,7 @@
 body {
     padding-top: 3.5rem;
     background-color: #6b737a;
-    background-image: url(../../assets/cards-background-2.jpeg);
+    background-image: url(../../assets/card.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -22,8 +22,11 @@ body {
     border-radius: 5%;
 }
 .jumbotron{
-    background-image: url(../../assets/home-background.jpeg);
+    background-image: url(../../assets/home-backgrounds.png);
     background-size: cover;
     height: 100%;
-
+}
+.btn-secondary{
+    background-color: #c9315c !important;
+    border-color: #c9315c;
 }

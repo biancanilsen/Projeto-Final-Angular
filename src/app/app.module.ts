@@ -1,3 +1,4 @@
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { PetService } from './services/pet.service';
 import { UserService } from './services/user.service';
 import { NgModule } from '@angular/core';
@@ -50,7 +51,7 @@ import { ReportPageComponent } from './report-page/report-page.component';
     BsDropdownModule.forRoot(),
     RouterModule
   ],
-  providers: [UserService, PetService],
+  providers: [UserService, PetService, BsModalRef, BsModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -27,8 +27,25 @@
     color: black;
   }
 .jumbotron{
-    background-image: url(../../assets/cards-background-2.jpeg);
+    background-image: url(../../assets/card.png);
     background-size: cover;
     height: 100%;
-  }
-
+    background-repeat: no-repeat;
+    /*color: #e7acab*/
+}
+.btn-primary{
+    background-color: #c9315c !important;
+    border-color: #c9315c;
+}
+.modal-header{
+    background-color: #e7acab !important;
+    border-color: #e7acab;
+    width: 500px;
+    border-style: groove;
+    border-radius: 5%;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.btn btn-primary{
+}
