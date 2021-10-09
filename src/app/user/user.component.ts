@@ -1,6 +1,7 @@
 import { UserService } from '../services/user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-user',
@@ -9,17 +10,20 @@ import { Router } from '@angular/router';
 })
 export class UserComponent implements OnInit {
 
-  constructor(public userService: UserService, private routerService: Router) { }
+  constructor(public userService: UserService, private routerService: Router,
+    private bsModalRef: BsModalRef,
+    private modalService: BsModalService) { }
 
-  
+  modalRef?: BsModalRef;
+
   ngOnInit(): void {}
   
   password1: string = "";
   
-  onSubmit(form : any){
+  onSubmit(form : any, template: TemplateRef<any>){
     if(this.verifyPassword(this.password1, this.userService.formData.Password) == true)
       this.postUser(); 
-      this.routerService.navigateByUrl("/user-confirm")
+      this.modalRef = this.modalService.show(template);
   }
 
   update(){

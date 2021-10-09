@@ -26,10 +26,10 @@ export class PetComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getLogged();
   }
-  onSubmit(form: any) {
+  onSubmit(form: any, template: TemplateRef<any>) {
     this.petService.formData.current_owner_id = this.userService.logged.Id;
     this.postPet();
-    this.routerService.navigateByUrl('/pet-confirm');
+    this.modalRef = this.modalService.show(template);
   }
   update() {
     this.petService.updatePet(this.petService.formData);
@@ -48,18 +48,5 @@ export class PetComponent implements OnInit {
     this.fileToUpload = files.item(0);
   }
 
-  doHide() {
-    this.bsModalRef.hide();
-  }
-
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
-  }
-  /*uploadFileToActivity() {
-    this.photoUploadService.postFile(this.fileToUpload).subscribe(data => {
-      // do something, if upload success
-      }, error => {
-        console.log(error);
-      });
-  }*/
+  
 }

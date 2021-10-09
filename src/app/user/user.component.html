@@ -2,7 +2,7 @@
 <div class="jumbotron">
   <section class="container">
     <h1 class="row" style="padding: 30px;">Cadastro do usuário</h1>
-    <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form)" >
+    <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form, template)" >
       <div class="mb-3">
         <label>Nome</label>
         <input
@@ -281,11 +281,28 @@
         </p>
       </div>
 
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary" [disabled]="form.invalid" routerLink="/user-sign-up">
-          Salvar
-        </button>
-      </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled] = "form.invalid"
+        
+      >
+        Salvar
+      </button>
+      <ng-template #template>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">CADASTRO REALIZADO</h4>
+          <button
+            type="button"
+            class="btn-close close pull-right"
+            aria-label="Close"
+            (click)="modalRef?.hide()"
+            routerLink="/"
+          >
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+          </button>
+        </div>
+      </ng-template>
 
     </form>
   </section>

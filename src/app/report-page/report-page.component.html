@@ -18,7 +18,29 @@
                 <label for="disabledTextInput" class="form-label">Descrição do problema:</label>
                 <input type="text" id="disabledTextInput" class="form-control" placeholder="Descreva o problema"/>
             </div>
-            <button type="button" class="buttonReportConfirm" (click)="confirmReport()">Confirmar</button>
+            <button
+        type="button"
+        class="btn btn-primary"
+        (click) = "openModel(template)"
+        
+      >
+        Confirmar
+      </button>
+      <ng-template #template>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">DENÚNCIA ENVIADA</h4>
+          <button
+            type="button"
+            class="btn-close close pull-right"
+            aria-label="Close"
+            (click)="modalRef?.hide()"
+            routerLink="/"
+          >
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+          </button>
+        </div>
+      </ng-template>
+
             <button type="button" class="buttonReportCancel" [routerLink]= "['/']">Cancelar</button>
         </fieldset>
     </section>
