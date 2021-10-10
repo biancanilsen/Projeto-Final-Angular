@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Photo } from '../domain/photo';
 @Injectable({
-providedIn: 'root'
+	providedIn: 'root'
 })
 export class PhotoUploadService {
+
+	// API url
+	baseApiUrl = "https://localhost:44356/api/Photos"
+
+	constructor(private http: HttpClient) { }
+
 	
-// API url
-baseApiUrl = "https://localhost:44356/api/Photos"
 	
-constructor(private http:HttpClient) { }
+	postFile(photoToUpload: Photo): void {
+			
+		const httpOptions = {
+			headers: new HttpHeaders({'Content-Type': 'application/json'})
+		  }
+		  debugger;
+		 this.http.post(this.baseApiUrl, photoToUpload, httpOptions).subscribe(data => {
+			console.log(data)
+		});
+	}
 
-// Returns an observable
-upload(file: any):Observable<any> {
-
-	// Create form data
-	const formData = new FormData();
-		
-	// Store form name as "file" with file data
-	formData.append("file", file, file.name);
-		
-	// Make http post request over api
-	// with formData as req
-	return this.http.post(this.baseApiUrl, formData)
 }
-}
-

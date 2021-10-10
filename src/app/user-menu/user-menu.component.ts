@@ -11,6 +11,7 @@ export class UserMenuComponent implements OnInit {
   constructor(public userService: UserService) { }
 
   ngOnInit(): void {
+    this.userService.getLogged();
   }
 
   onSubmit(form: any) {

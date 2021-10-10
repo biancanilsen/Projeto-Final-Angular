@@ -226,7 +226,7 @@
           type="email"
           class="form-control"
           placeholder="Ex: Rua Bahia"
-          [(ngModel)]="this.userService.formData.Street"
+          [(ngModel)]="this.userService.logged.Street"
           required
           [class.invalid]="rua.invalid && rua.touched"
           minlength="2"
@@ -241,7 +241,7 @@
           name="numeroCasa"
           class="form-control"
           placeholder="Ex: 000"
-          [(ngModel)]="this.userService.formData.House_number"
+          [(ngModel)]="this.userService.logged.House_number"
           required
           [class.invalid]="numeroCasa.invalid && numeroCasa.touched"
           minlength="1"

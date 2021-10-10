@@ -101,9 +101,9 @@
         <label>Foto</label>
         <input
           name="foto"
-          class="form-control"
           type="file"
           id="file"
+          (change)="handleFileInput($event)"
           [(ngModel)]="this.petService.formData.photos"
           #foto="ngModel"
         />

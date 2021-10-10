@@ -7,12 +7,13 @@
         name="nome"
         class="form-control"
         placeholder="Digite seu nome"
-        [(ngModel)]="this.userService.formData.Name"
+        [(ngModel)]="this.userService.logged.Name"
         required
         [class.invalid]="nome.invalid && nome.touched"
         minlength="3"
         maxlength="50"
         #nome="ngModel"
+        disabled
       />
     </div>
 
@@ -22,12 +23,13 @@
         name="sobrenome"
         class="form-control"
         placeholder="Digite seu sobrenome"
-        [(ngModel)]="this.userService.formData.Surname"
+        [(ngModel)]="this.userService.logged.Surname"
         required
         [class.invalid]="sobrenome.invalid && sobrenome.touched"
         minlength="3"
         maxlength="50"
         #sobrenome="ngModel"
+        disabled
       />
     </div>
     
@@ -37,7 +39,7 @@
         name="telefone"
         class="form-control"
         placeholder="(47) 99124-1245"
-        [(ngModel)]="this.userService.formData.Phone"
+        [(ngModel)]="this.userService.logged.Phone"
         required
         [class.invalid]="telefone.invalid && telefone.touched"
         minlength="11"
@@ -48,38 +50,16 @@
         O telefone deve conter no minimo 11 dígitos!
       </p>
     </div>
-
-    <div class="mb-3">
-      <label>Data de nascimento</label>
-      <input
-        name="diaNascimento"
-        type="date"
-        class="form-control"
-        [(ngModel)]="this.userService.formData.BirthDate"
-        required
-        [class.invalid]="diaNascimento.invalid && diaNascimento.touched"
-        minlength="8"
-        maxlength="10"
-        #diaNascimento="ngModel"
-      />
-    </div>
     
     <div class="mb-3">
       <label>CPF</label>
       <input
         name="cpf"
         class="form-control"
-        placeholder="Ex.: 000.000.000-00"
-        [(ngModel)]="this.userService.formData.CPF"
-        required
-        [class.invalid]="cpf.invalid && cpf.touched"
-        minlength="11"
-        maxlength="14"
+        [(ngModel)]="this.userService.logged.CPF"
         #cpf="ngModel"
+        disabled
       />
-      <p *ngIf="cpf.invalid && cpf.touched" class="invalid">
-        O CPF deve conter no minimo 11 dígitos
-      </p>
     </div>
 
     <div class="mb-3">
@@ -88,45 +68,29 @@
         name="email"
         type="email"
         class="form-control"
-        [(ngModel)]="this.userService.formData.Email"
-        required
-        [class.invalid]="email.invalid && email.touched"
-        minlength="2"
-        maxlength="60"
-        pattern="[^ @]*@[^ @]*"
+        [(ngModel)]="this.userService.logged.Email"
         #email="ngModel"
+        disabled
       />
     </div>
 
     <div class="mb-3">
-      <label>Crie uma senha</label>
+      <label>Altere sua senha</label>
       <input
         name="password"
         type="password"
         class="form-control"
-        required
-        [(ngModel)] = "this.userService.formData.Password"
+        [(ngModel)] = "this.userService.logged.Password"
         [class.invalid]="password.invalid && password.touched"
+        required
         minlength="6"
         maxlength="60"
         #password="ngModel"
       />
+      <p *ngIf="password.invalid && password.touched" class="invalid">
+        A senha deve conter ao menos 6 dígitos
+      </p>
     </div>
-
-      <div class="mb-3">
-        <label>Corfirme sua senha</label>
-        <input
-          name="password2"
-          type="password"
-          class="form-control"
-          [(ngModel)]="this.userService.formData.Password"
-          required
-          [class.invalid]="password2.invalid && password2.touched"
-          minlength="6"
-          maxlength="60"
-          #password2="ngModel"
-        />
-      </div>
 
     <div class="mb-3">
       <label >Bairro</label>
@@ -139,10 +103,43 @@
         #bairro="ngModel"
         style="width: 100%; height: 50%; margin-left: 10px;"
       >
-        <option selected>Selecione</option>
-        <option value="1">Centro</option>
-        <option value="2">Velha</option>
-        <option value="3">Vila Nova</option>
+      <option value="1">Água Verde</option>
+      <option value="2">Badenfurt</option>
+      <option value="3">Bela Vista</option>
+      <option value="4">Boa Vista</option>
+      <option value="5">Bom Retiro</option>
+      <option value="6">Centro</option>
+      <option value="7">Do Salto</option>
+      <option value="8">Escola Agrícola</option>
+      <option value="9">Fidélis</option>
+      <option value="10">Fortaleza</option>
+      <option value="11">Fortaleza Alta</option>
+      <option value="12">Garcia</option>
+      <option value="13">Glória</option>
+      <option value="14">Itoupava Central</option>
+      <option value="15">Itoupava Norte</option>
+      <option value="16">Itoupava Seca</option>
+      <option value="17">Itoupavazinha</option>
+      <option value="18">Jardim Blumenau</option>
+      <option value="19">Nova Esperança</option>
+      <option value="20">Passo Manso</option>
+      <option value="21">Ponta Aguda</option>
+      <option value="22">Progresso</option>
+      <option value="23">Ribeirão Fresco</option>
+      <option value="24">Salto</option>
+      <option value="25">Salto do Norte</option>
+      <option value="26">Salto Weissbach</option>
+      <option value="27">Testo Salto</option>
+      <option value="28">Tribess</option>
+      <option value="29">Valparaíso</option>
+      <option value="30">Velha</option>
+      <option value="31">Velha Central</option>
+      <option value="32">Velha Grande</option>
+      <option value="33">Victor Konder</option>
+      <option value="34">Vila Formosa</option>
+      <option value="35">Vila Itoupava</option>
+      <option value="Vila Nova">Vila Nova</option>
+      <option value="37">Vorstadt</option>
       </select>
     </div>
     
@@ -154,7 +151,7 @@
         type="email"
         class="form-control"
         placeholder="Ex: Rua general osorio"
-        [(ngModel)]="this.userService.formData.Street"
+        [(ngModel)]="this.userService.logged.Street"
         required
         [class.invalid]="rua.invalid && rua.touched"
         minlength="2"
@@ -169,7 +166,7 @@
         name="numeroCasa"
         class="form-control"
         placeholder="Ex: 365"
-        [(ngModel)]="this.userService.formData.House_number"
+        [(ngModel)]="this.userService.logged.House_number"
         required
         [class.invalid]="numeroCasa.invalid && numeroCasa.touched"
         minlength="2"
@@ -185,7 +182,7 @@
         type="cep"
         class="form-control"
         placeholder="Ex.:00000-000"
-        [(ngModel)]="this.userService.formData.CEP"
+        [(ngModel)]="this.userService.logged.CEP"
         required
         [class.invalid]="cep.invalid && cep.touched"
         minlength="8"
