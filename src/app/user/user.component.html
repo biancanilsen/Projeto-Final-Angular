@@ -2,7 +2,7 @@
 <div class="jumbotron">
   <section class="container">
     <h1 class="row" style="padding: 30px;">Cadastro do usuário</h1>
-    <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form)" >
+    <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form, template)" >
       <div class="mb-3">
         <label>Nome</label>
         <input
@@ -36,19 +36,39 @@
       <div class="mb-3">
         <label>Telefone</label>
         <input
-          name="telefone"
-          class="form-control"
-          placeholder="(47) 99124-1245"
-          [(ngModel)]="this.userService.formData.Phone"
-          required
-          [class.invalid]="telefone.invalid && telefone.touched"
-          minlength="11"
-          maxlength="15"
-          #telefone="ngModel"
-        />
-        <p *ngIf="telefone.invalid && telefone.touched" class="invalid">
-          O telefone deve conter no minimo 11 dígitos!
-        </p>
+                class="form-control form-control"
+                placeholder="(__) _____-____"
+                name="phone"
+                #phone="ngModel"
+                [(ngModel)]="this.userService.formData.Phone"
+                onkeyup="
+                            var phone = this.value;
+                            if (phone.match(/^[A-Z]|[a-z]$/) !== null){
+                                this.value = '';
+                            }"
+                onkeydown="
+                            var phone = this.value;
+                            if (window.event.keyCode == 8) { }
+                            else if (phone.match(/^[A-Z]|[a-z]$/) !== null){
+                                this.value = ' ';
+                            }
+                            else if (phone.match(/^\d$/) !== null){
+                                this.value = '(' + phone;
+                            }
+                            else if (phone.match(/^\(\d{2}$/) !== null){
+                                this.value = phone + ') ';
+                            }
+                            else if (phone.match(/^\(\d{2}\) \d{5}$/) !== null) {
+                                this.value = phone + '-';
+                            }"
+                required
+                maxlength="15"
+                minlength="15"
+                [class.invalid]="phone.invalid && phone.touched"
+              />
+              <p *ngIf="phone.invalid && phone.touched" class="invalid">
+                O telefone deve conter no minimo 11 dígitos!
+              </p>
       </div>
 
       <div class="mb-3">
@@ -69,16 +89,33 @@
       <div class="mb-3">
         <label>CPF</label>
         <input
-          name="cpf"
-          class="form-control"
-          placeholder="Ex.: 000.000.000-00"
-          [(ngModel)]="this.userService.formData.CPF"
-          required
-          [class.invalid]="cpf.invalid && cpf.touched"
-          minlength="11"
-          maxlength="14"
-          #cpf="ngModel"
-        />
+                class="form-control form-control"
+                placeholder="___.___.___-__"
+                name="cpf"
+                #cpf="ngModel"
+                [(ngModel)]="this.userService.formData.CPF"
+                onkeyup="
+                            var cpf = this.value;
+                            if (cpf.match(/^[A-Z]|[a-z]$/) !== null){
+                                this.value = '';
+                            }"
+                onkeydown="
+                            var cpf = this.value;
+                            if (window.event.keyCode == 8) { }
+                            else if (cpf.match(/^\d{3}$/) !== null){
+                                this.value = cpf + '.';
+                            }
+                            else if (cpf.match(/^\d{3}\.\d{3}$/) !== null){
+                                this.value = cpf + '.';
+                            }
+                            else if (cpf.match(/^\d{3}\.\d{3}\.\d{3}$/) !== null) {
+                                this.value = cpf + '-';
+                            }"
+                required
+                minlength="14"
+                maxlength="14"
+                [class.invalid]="cpf.invalid && cpf.touched"
+              />
         <p *ngIf="cpf.invalid && cpf.touched" class="invalid">
           O CPF deve conter no minimo 11 dígitos
         </p>
@@ -98,38 +135,36 @@
           pattern="[^ @]*@[^ @]*"
           #email="ngModel"
         />
+        <p *ngIf="email.invalid && email.touched" class="invalid">
+          Email invalido
+        </p>
       </div>
 
       <div class="mb-3">
         <label>Crie uma senha</label>
         <input
-          name="password"
+          name="password1"
           type="password"
           class="form-control"
+          [(ngModel)] = "this.password1"
           required
-          [(ngModel)] = "this.userService.formData.Password"
-          [class.invalid]="password.invalid && password.touched"
           minlength="6"
-          maxlength="60"
-          #password="ngModel"
+          maxlength="60"         
         />
-      </div>
-
-      <div class="mb-3">
         <label>Corfirme sua senha</label>
         <input
           name="password2"
           type="password"
           class="form-control"
-          [(ngModel)]="this.userService.formData.Password"
           required
-          [class.invalid]="password2.invalid && password2.touched"
+          *ngIf="password1"
+          [(ngModel)]="this.userService.formData.Password"
+          [class.invalid]="password2.invalid && password2.touched "
           minlength="6"
           maxlength="60"
           #password2="ngModel"
         />
       </div>
-
       <div class="mb-3">
         <label >Bairro</label>
         <br>
@@ -142,9 +177,44 @@
           style="width: 50%; height: 50%; margin-left: 10px;"
         >
           <option selected>Selecione</option>
-          <option value="1">Centro</option>
-          <option value="2">Velha</option>
-          <option value="3">Vila Nova</option>
+          <option value="1">Água Verde</option>
+          <option value="2">Badenfurt</option>
+          <option value="3">Bela Vista</option>
+          <option value="4">Boa Vista</option>
+          <option value="5">Bom Retiro</option>
+          <option value="6">Centro</option>
+          <option value="7">Do Salto</option>
+          <option value="8">Escola Agrícola</option>
+          <option value="9">Fidélis</option>
+          <option value="10">Fortaleza</option>
+          <option value="11">Fortaleza Alta</option>
+          <option value="12">Garcia</option>
+          <option value="13">Glória</option>
+          <option value="14">Itoupava Central</option>
+          <option value="15">Itoupava Norte</option>
+          <option value="16">Itoupava Seca</option>
+          <option value="17">Itoupavazinha</option>
+          <option value="18">Jardim Blumenau</option>
+          <option value="19">Nova Esperança</option>
+          <option value="20">Passo Manso</option>
+          <option value="21">Ponta Aguda</option>
+          <option value="22">Progresso</option>
+          <option value="23">Ribeirão Fresco</option>
+          <option value="24">Salto</option>
+          <option value="25">Salto do Norte</option>
+          <option value="26">Salto Weissbach</option>
+          <option value="27">Testo Salto</option>
+          <option value="28">Tribess</option>
+          <option value="29">Valparaíso</option>
+          <option value="30">Velha</option>
+          <option value="31">Velha Central</option>
+          <option value="32">Velha Grande</option>
+          <option value="33">Victor Konder</option>
+          <option value="34">Vila Formosa</option>
+          <option value="35">Vila Itoupava</option>
+          <option value="36">Vila Nova</option>
+          <option value="37">Vorstadt</option>
+
         </select>
       </div>
       
@@ -155,7 +225,7 @@
           name="rua"
           type="email"
           class="form-control"
-          placeholder="Ex: Rua general osorio"
+          placeholder="Ex: Rua Bahia"
           [(ngModel)]="this.userService.formData.Street"
           required
           [class.invalid]="rua.invalid && rua.touched"
@@ -170,12 +240,12 @@
         <input
           name="numeroCasa"
           class="form-control"
-          placeholder="Ex: 365"
+          placeholder="Ex: 000"
           [(ngModel)]="this.userService.formData.House_number"
           required
           [class.invalid]="numeroCasa.invalid && numeroCasa.touched"
-          minlength="2"
-          maxlength="60"
+          minlength="1"
+          maxlength="4"
           #numeroCasa="ngModel"
           style="width: 100px;"
         />
@@ -183,26 +253,60 @@
       
       <div>
         <label>CEP</label>
+        
         <input
-          name="cep"
-          type="cep"
-          class="form-control"
-          placeholder="Ex.:00000-000"
-          [(ngModel)]="this.userService.formData.CEP"
-          required
-          [class.invalid]="cep.invalid && cep.touched"
-          minlength="8"
-          maxlength="8"
-          #cep="ngModel"
-        />
+        class="form-control"
+                placeholder="_____-___"
+                name="cep"
+                #cep="ngModel"
+                [(ngModel)]="this.userService.formData.CEP"
+                onkeyup="
+                            var cep = this.value;
+                            if (cep.match(/^[A-Z]|[a-z]$/) !== null){
+                                this.value = '';
+                            }"
+                onkeydown="
+                            var cep = this.value;
+                            if (window.event.keyCode == 8) { }
+                            else if (cep.match(/^\d{5}$/) !== null){
+                                this.value = cep + '-';
+                            }"
+                required
+                minlength="9"
+                maxlength="9"
+                [class.invalid]="cep.invalid && cep.touched"
+              />
+        <p *ngIf="cep.invalid && cep.touched" class="invalid">
+          O Cep invalido
+        </p>
       </div>
 
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary" [disabled]="form.invalid" routerLink="/user-sign-up">
-          Salvar
-        </button>
-      </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled] = "form.invalid"
+        
+      >
+        Salvar
+      </button>
+      <ng-template #template>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">CADASTRO REALIZADO</h4>
+          <button
+            type="button"
+            class="btn-close close pull-right btn-primary"
+            aria-label="Close"
+            (click)="modalRef?.hide()"
+            routerLink="/"
+          >
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+          </button>
+        </div>
+      </ng-template>
 
     </form>
   </section>
-</div>
+  </div>
+  <footer class="containerFooter">
+    <p>&copy; Get Pet 2021</p>
+  </footer>

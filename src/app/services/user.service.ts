@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from './user';
+import { User } from '../domain/user';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,8 @@ export class UserService {
 
   public logged: User = new User();
 
+  loggedUsers: User[] = [];
+
   getAllUsers(){
     this.httpClient.get<User[]>(this.BASE_URL ).subscribe((data) =>{
       console.log(data);
@@ -31,15 +33,20 @@ export class UserService {
     this.logged.Street = "Rua da Banana"
     this.logged.Email = "cleitin@hotmail.com"
     this.logged.House_number = "7"
-    this.logged.Id = -1
-
-
-
+    this.logged.Surname = "Da Massa"
+    this.logged.Phone = "9999-9999"
+    this.logged.CEP = "99.999-999"
+    this.logged.Password = "senhadaoradocleitin"
+    this.logged.pets = [];
+    this.logged.Id = 1
   }
 
-  getUser(user: User)
+  getUser(id: number)
   {
-    return this.httpClient.get<User>(this.BASE_URL+ `/${user.Id}`) 
+    return this.httpClient.get<User>(this.BASE_URL+ `/${id}`).subscribe((data) =>
+    {
+      this.formData = data;
+    })
   }
 
   postUser(){

@@ -1,5 +1,6 @@
-import { PetService } from './pet.service';
-import { UserService } from './user.service';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { PetService } from './services/pet.service';
+import { UserService } from './services/user.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +18,11 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { PetConfirmComponent } from './pet-confirm/pet-confirm.component';
 import { UserConfirmComponent } from './user-confirm/user-confirm.component';
 import { RouterModule } from '@angular/router';
+import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
+import { PetPageComponent } from './pet-page/pet-page.component';
+import { AdoptPageComponent } from './adopt-page/adopt-page.component';
+import { ReportPageComponent } from './report-page/report-page.component';
+import { PetconfirmComponent } from './petconfirm/petconfirm.component';
 
 
 
@@ -31,6 +37,11 @@ import { RouterModule } from '@angular/router';
     DemoDropdownAnimatedComponent,
     PetConfirmComponent,
     UserConfirmComponent,
+    PhotoUploadComponent,
+    PetPageComponent,
+    AdoptPageComponent,
+    ReportPageComponent,
+    PetconfirmComponent,
     
   ],
   imports: [
@@ -42,7 +53,7 @@ import { RouterModule } from '@angular/router';
     BsDropdownModule.forRoot(),
     RouterModule
   ],
-  providers: [UserService, PetService],
+  providers: [UserService, PetService, BsModalRef, BsModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

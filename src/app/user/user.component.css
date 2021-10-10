@@ -1,4 +1,11 @@
 
+.jumbotron{
+    background-image: url(../../assets/card.png);
+    background-size: cover;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
 .container{
     width: 750px;
     margin-left: 25%;
@@ -7,9 +14,26 @@
     border-radius: 5%;
     padding-bottom: 30px;
     padding-left: 20px;
-    padding-right: 20px;
-    
+    padding-right: 20px; 
+    background-image: url(../../assets/CardsPetRegistrationBackgroundPhotoo.png);
+    background-size: cover;
+    height: 100%;
+    color: black;  
 }
 .mb-3{
     width: 50%;
 }
+
+.containerFooter{
+    text-align: center;
+    border-style: groove;
+    border-radius: 5%;
+    color: white;
+    background-color:#c9315c; 
+    border-color: #c9315c; 
+} 
+
+.btn-primary{
+    background-color:#c9315c;
+    border-color: #c9315c; 
+  }

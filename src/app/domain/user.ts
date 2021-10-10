@@ -16,4 +16,5 @@ export class User {
     Adopted: boolean = false;
     Donated: boolean = false;
     pets: Pet[] = [];
+    logged: boolean = false;
 }

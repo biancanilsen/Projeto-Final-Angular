@@ -1,0 +1,55 @@
+.row{
+    background-image: url(../../assets/CardsPetRegistrationBackgroundPhotoo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-style: groove;
+    margin-top: 150px; 
+    height: 100vh;
+    width: 100vw;
+    
+    }
+
+.col-md-6{
+    padding: 30px;
+    width: 200px;
+    background-image: url(../../assets/card.png);
+    background-size: cover;
+    height: 100%;
+    color: black;
+}
+
+p{
+    width: 350px;
+}
+
+img{
+    width: 400px;
+}
+
+div > div {
+    display: inline-block;
+   
+}
+.buttonAdotar{
+    border:1px solid;
+    padding: 3px 10px; 
+    vertical-align: middle;
+    background:#20878f; 
+    color:white;
+    border-radius:6px; 
+    font-size: 20px; 
+    font-family:helvetica, serif;
+    text-decoration:none;
+    text-align: center
+}
+.buttonReportar{
+    border:1px solid; 
+    padding: 3px 10px; 
+    vertical-align: middle; 
+    background:#d42008; 
+    color:white;border-radius:6px; 
+    font-size: 20px; 
+    font-family:helvetica, serif;
+    text-decoration:none;
+}
+

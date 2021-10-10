@@ -1,10 +1,17 @@
 <div class="header"></div>
 <div class="jumbotron">
   <section class="container">
-    <h1 class="row" style="padding: 30px;">Cadastro do Pet</h1>
-    <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form)"style="margin-top: 100px;">
+    <h1 class="row" style="padding: 30px; text-align: center">
+      Cadastro do Pet
+    </h1>
+    <form
+      class="row g-3 align-items-center"
+      novalidate
+      #form="ngForm"
+      (submit)="onSubmit(form, template)"
       
-      <div class="mb-3">
+    >
+      <div class="col-md-6">
         <label>Nome</label>
         <input
           name="nome"
@@ -18,8 +25,8 @@
           #nome="ngModel"
         />
       </div>
-      
-      <div class="mb-3">
+
+      <div class="col-md-6">
         <label>Animal</label>
         <input
           name="animal"
@@ -33,8 +40,8 @@
           #animal="ngModel"
         />
       </div>
-    
-      <div class="mb-3">
+
+      <div class="col-md-6">
         <label>Raça</label>
         <input
           name="raca"
@@ -48,12 +55,11 @@
           #raca="ngModel"
         />
       </div>
-
-      <div class="mb-3">
-        <label>Idade</label>
-      <input
+      <div class="col-md-6" style="padding-top: 10px">
+        <label>Idade (anos / meses)</label>
+        <input
           name="anos"
-          class="form-control" 
+          class="form-control"
           type="number"
           [(ngModel)]="this.petService.formData.age_years"
           required
@@ -61,12 +67,11 @@
           minlength="1"
           maxlength="2"
           #anos="ngModel"
-          style="width: 50%;"
-        >
-        <label>meses</label>
+          style="width: 50%"
+        />
         <input
           name="meses"
-          class="form-control" 
+          class="form-control"
           type="number"
           [(ngModel)]="this.petService.formData.age_months"
           required
@@ -74,42 +79,72 @@
           minlength="1"
           maxlength="2"
           #meses="ngModel"
-          style="width: 50%;"
-        >
+          style="width: 50%"
+        />
       </div>
-
-      <div lass="col-md-6">
+      <div class="col-6">
         <label>Porte</label>
+        <br />
         <select
-        class="form-select"
-        name="porte"
-        [(ngModel)]="this.petService.formData.size"
-        #porte="ngModel"
-      >
-        <option selected>Selecione</option>
-        <option value="1">Pequeno</option>
-        <option value="2">Médio</option>
-        <option value="3">Grande</option>
-      </select>
+          class="form-select"
+          name="porte"
+          [(ngModel)]="this.petService.formData.size"
+          #porte="ngModel"
+        >
+          <option selected value="1">Pequeno</option>
+          <option value="2">Médio</option>
+          <option value="3">Grande</option>
+        </select>
       </div>
 
-      <div>
+      <div class="col-md-6" style="padding-top: 10px">
         <label>Foto</label>
         <input
           name="foto"
           class="form-control"
           type="file"
+          id="file"
           [(ngModel)]="this.petService.formData.photos"
           #foto="ngModel"
         />
-      </div>  
-
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary" [disabled]="form.invalid" >
-          Salvar
-        </button>
       </div>
 
+      <div class="col-12">
+        <label>Descrição</label>
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+          name="description"
+          [(ngModel)]="this.petService.formData.description"
+          #description="ngModel"
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled] = "form.invalid"
+        
+      >
+        Salvar
+      </button>
+      <ng-template #template>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">CADASTRO REALIZADO</h4>
+          <button
+            type="button"
+            class="btn-close close pull-right"
+            aria-label="Close"
+            (click)="modalRef?.hide()"
+            routerLink="/"
+          >
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+          </button>
+        </div>
+      </ng-template>
     </form>
   </section>
-</div>
+ </div>
+<footer class="containerFooter">
+  <p>&copy; Get Pet 2021</p>
+</footer>
