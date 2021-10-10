@@ -1,5 +1,14 @@
+.bigcontainer{
+    margin: 0;
+    background-image: url(../../assets/card.png);
+    background-size: cover;
+    height: 200%;
+    color: black;
+}
+
 .container{
-    margin-top: 143px;
+    background-image: url(../../assets/CardsPetRegistrationBackgroundPhotoo.png);
+    margin-top: 70px;
     width: 500px;
     margin-left: 30%;
     margin-right: 30%;

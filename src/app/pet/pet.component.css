@@ -39,10 +39,8 @@
 }
 .modal-header{
     background-color: #e7acab !important;
-    border-color: #e7acab;
+    color: white;
     width: 500px;
-    border-style: groove;
-    border-radius: 5%;
     padding-bottom: 30px;
     padding-left: 20px;
     padding-right: 20px;
@@ -51,3 +49,12 @@
     margin-top: 7%;
     margin-left: 5%;
 }
+
+.containerFooter{
+    text-align: center;
+    border-style: groove;
+    border-radius: 5%;
+    color: white;
+    background-color:#c9315c; 
+    border-color: #c9315c; 
+} 

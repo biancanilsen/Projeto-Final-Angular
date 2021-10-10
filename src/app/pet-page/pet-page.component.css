@@ -1,20 +1,27 @@
 .row{
-    width: 1000px;
-    background: rgb(235, 235, 235);
-    margin-left: 10%;
-    margin-top: 100px;
-}
+    background-image: url(../../assets/CardsPetRegistrationBackgroundPhotoo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-style: groove;
+    margin-top: 150px; 
+    height: 100vh;
+    width: 100vw;
+    
+    }
+
 .col-md-6{
     padding: 30px;
-    width: 400px;
+    width: 200px;
+    background-image: url(../../assets/card.png);
+    background-size: cover;
+    height: 100%;
+    color: black;
 }
-.description{
-    border-style: groove;
-    border-radius: 5%;
-} 
+
 p{
     width: 350px;
 }
+
 img{
     width: 400px;
 }
