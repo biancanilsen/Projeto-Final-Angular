@@ -12,14 +12,11 @@ export class HomeComponent implements OnInit {
 
   constructor(public petService: PetService, public userService: UserService) { }
 
-  
-  
   ngOnInit(): void {
     this.petService.getAllPets();
     this.userService.getLogged();
   }
-  getUser(id: number): void{
-   this.userService.getUser(id);
+  getUser(id: number): void {
+    this.userService.getUser(id);
   }
-
 }
