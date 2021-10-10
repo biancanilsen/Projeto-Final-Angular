@@ -1,1 +1,48 @@
-<p>report-page works!</p>
+<form>
+  <div class= "bigcontainer">
+    <section class="container">
+        <fieldset>
+            <legend>Reportar problema aos administradores</legend>
+            <div class="nameReport">
+                <label for="disabledTextInput" class="form-label">Seu Nome:</label>
+                <input type="text" id="disabledTextInput" class="form-control" placeholder="Informe seu nome"/>
+            </div>
+            <div class="telefonelReport">
+                <label for="disabledTextInput" class="form-label">Seu telefone:</label>
+                <input type="text" id="disabledTextInput" class="form-control" placeholder="Informe seu telefone"/>
+            </div>
+            <div class="emailReport">
+                <label for="disabledTextInput" class="form-label">Seu e-mail:</label>
+                <input type="text" id="disabledTextInput" class="form-control" placeholder="Informe seu e-mail"/>
+            </div>
+            <div class="problemReport">
+                <label for="disabledTextInput" class="form-label">Descrição do problema:</label>
+                <input type="text" id="disabledTextInput" class="form-control" placeholder="Descreva o problema"/>
+            </div>
+            <button
+        type="button"
+        class="btn btn-primary"
+        (click) = "openModel(template)"
+        
+      >
+        Confirmar
+      </button>
+      <ng-template #template>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">DENÚNCIA ENVIADA</h4>
+          <button
+            type="button"
+            class="btn-close close pull-right"
+            aria-label="Close"
+            (click)="modalRef?.hide()"
+            routerLink="/"
+          >
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+          </button>
+        </div>
+      </ng-template>
+            <button type="button" class="btn btn-danger"[routerLink]= "['/']">Cancelar</button>
+        </fieldset>
+    </section>
+  </div>
+  </form>

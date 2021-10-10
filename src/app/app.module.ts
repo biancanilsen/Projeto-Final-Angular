@@ -1,3 +1,4 @@
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { PetService } from './services/pet.service';
 import { UserService } from './services/user.service';
 import { NgModule } from '@angular/core';
@@ -21,6 +22,7 @@ import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
 import { PetPageComponent } from './pet-page/pet-page.component';
 import { AdoptPageComponent } from './adopt-page/adopt-page.component';
 import { ReportPageComponent } from './report-page/report-page.component';
+import { PetconfirmComponent } from './petconfirm/petconfirm.component';
 
 
 
@@ -39,6 +41,7 @@ import { ReportPageComponent } from './report-page/report-page.component';
     PetPageComponent,
     AdoptPageComponent,
     ReportPageComponent,
+    PetconfirmComponent,
     
   ],
   imports: [
@@ -50,7 +53,7 @@ import { ReportPageComponent } from './report-page/report-page.component';
     BsDropdownModule.forRoot(),
     RouterModule
   ],
-  providers: [UserService, PetService],
+  providers: [UserService, PetService, BsModalRef, BsModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

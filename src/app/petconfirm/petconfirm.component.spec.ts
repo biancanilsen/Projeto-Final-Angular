@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PetComponent } from './pet.component';
+import { PetconfirmComponent } from './petconfirm.component';
 
-describe('PetComponent', () => {
-  let component: PetComponent;
-  let fixture: ComponentFixture<PetComponent>;
+describe('PetconfirmComponent', () => {
+  let component: PetconfirmComponent;
+  let fixture: ComponentFixture<PetconfirmComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PetComponent ]
+      declarations: [ PetconfirmComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PetComponent);
+    fixture = TestBed.createComponent(PetconfirmComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -23,5 +23,3 @@ describe('PetComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-
-

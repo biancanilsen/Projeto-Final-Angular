@@ -1,3 +1,4 @@
+<body>
 <router-outlet></router-outlet>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
   <a class="navbar-brand" href="#">GetPet</a>
@@ -12,29 +13,16 @@
   >
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#"
-          >Home <span class="sr-only">(current)</span></a
-        >
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item navbar-right">
         <a class="nav-link" routerLink="/pet-sign-up">Cadastrar pet</a>
       </li>
-      
-
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          id="dropdown01"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-          >Dropdown</a
-        >
+      <li class="nav-item navbar-right">
+      <a class="nav-link">Doar</a>
       </li>
     </ul>
   </div>
@@ -45,19 +33,17 @@
     <li class="nav-item">
       <a class="nav-link" routerLink="/user-sign-up">Cadastre-se</a>
     </li>
-    <div class="btn-group" dropdown>
+    <div class="btn-group" dropdown style="margin-right: 10px;">
       <button id="button-animated" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
               aria-controls="dropdown-animated">
-        Menu <span class="caret"></span>
+        Meu perfil <span class="caret"></span>
       </button>
       <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu"
           role="menu" aria-labelledby="button-animated">
-        <li role="menuitem"><a class="dropdown-item" href="#">Editar pets</a></li>
-        <li role="menuitem"><a class="dropdown-item" routerLink="/user-menu">Minhas informações</a>
-        </li>
-        <li role="menuitem"><a class="dropdown-item" href="#">Something else
-          here</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Meus pets</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Sair</a>
       </ul>
     </div>
   </ul>
 </nav>
+</body>

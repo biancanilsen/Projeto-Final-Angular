@@ -1,4 +1,12 @@
-nav{
-    background: #a17e5f;
+.navbar{
+    background: #be345b;
+}
 
+.btn-primary{
+    background-color: #e7acab !important;
+    border-color: #e7acab;
+}
+
+#button-doar {
+margin-right: 75%;
 }

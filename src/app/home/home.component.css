@@ -1,29 +1,54 @@
+* {
+    overflow-x: hidden;
+}
+
+.jumbotron{
+    background-image: url(../../assets/home-backgrounds.png);
+    background-size: cover;
+    height: 100%;
+}
+
+.container{
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    overflow-y: hidden;
+}
+
 body {
     padding-top: 3.5rem;
     background-color: #6b737a;
-    background-image: url(../../assets/cards-background-2.jpeg);
+    background-image: url(../../assets/card.png);
     background-repeat: no-repeat;
     background-size: cover;
-}
-.container{
-    width: 70%;
-    
-    
-}
-.container{
-    margin-left: 20%;
-}
-.col-md-3{
-  
+}   
+
+.petCard{
     margin-bottom: 5%;
     margin-right: 5%;
-    padding: 20px;
-    background-color: white;
+    margin-left: 5%;
+    padding: 10px;
+    background-color: aliceblue;
     border-radius: 5%;
+    width: 15%;
 }
-.jumbotron{
-    background-image: url(../../assets/home-background.jpeg);
-    background-size: cover;
-    height: 100%;
 
+.petCard h2{
+    overflow: hidden;
+    color:#e7acab;
 }
+
+.btn-know-more{
+    background-color: #c9315c !important;
+    border-color: #c9315c;
+}
+
+.containerFooter{
+    text-align: center;
+    border-style: groove;
+    border-radius: 5%;
+    color: white;
+    background-color:#c9315c; 
+    border-color: #c9315c; 
+} 
+
