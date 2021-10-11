@@ -15,7 +15,6 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
 import { DemoDropdownAnimatedComponent } from './btn-dropdown/btn-dropdown.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { UserConfirmComponent } from './user-confirm/user-confirm.component';
 import { RouterModule } from '@angular/router';
 import { PetPageComponent } from './pet-page/pet-page.component';
 import { AdoptPageComponent } from './adopt-page/adopt-page.component';
@@ -30,7 +29,6 @@ import { ReportPageComponent } from './report-page/report-page.component';
     UserLoginComponent,
     UserMenuComponent,
     DemoDropdownAnimatedComponent,
-    UserConfirmComponent,
     PetPageComponent,
     AdoptPageComponent,
     ReportPageComponent,
