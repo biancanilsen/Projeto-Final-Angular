@@ -21,9 +21,6 @@ import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
 import { PetPageComponent } from './pet-page/pet-page.component';
 import { AdoptPageComponent } from './adopt-page/adopt-page.component';
 import { ReportPageComponent } from './report-page/report-page.component';
-import { PetconfirmComponent } from './petconfirm/petconfirm.component';
-
-
 
 @NgModule({
   declarations: [
@@ -39,7 +36,6 @@ import { PetconfirmComponent } from './petconfirm/petconfirm.component';
     PetPageComponent,
     AdoptPageComponent,
     ReportPageComponent,
-    PetconfirmComponent,
     
   ],
   imports: [
