@@ -1,0 +1,12 @@
+
+<div class="container">
+    <div *ngFor="let pet of this.petService.list">
+        <div *ngIf="pet.current_owner_id == this.userService.logged.Id">
+            <p>{{pet.name}}</p>
+            
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+</div>
