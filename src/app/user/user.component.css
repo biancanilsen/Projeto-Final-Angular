@@ -1,15 +1,17 @@
 
-.jumbotron{
+body{
     background-image: url(../../assets/card.png);
+    padding: 4.7%;
     background-size: cover;
     height: 100%;
     background-repeat: no-repeat;
+    padding-bottom: 0.45%;
 }
 
 .container{
     width: 750px;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 20%;
+    margin-right: 20%;
     border-style: groove;
     border-radius: 5%;
     padding-bottom: 30px;
@@ -23,17 +25,19 @@
 .mb-3{
     width: 50%;
 }
-
-.containerFooter{
-    text-align: center;
-    border-style: groove;
-    border-radius: 5%;
-    color: white;
-    background-color:#c9315c; 
-    border-color: #c9315c; 
-} 
-
 .btn-primary{
     background-color:#c9315c;
     border-color: #c9315c; 
-  }
+}
+.col-md-2{
+    width: 100px;
+}
+.form-select{
+    width: 100% !important; 
+    height: 37% !important; 
+    margin-left: 2px !important;
+}
+.title{
+    text-align:center;
+    padding: 30px;
+}
