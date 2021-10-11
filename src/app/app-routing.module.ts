@@ -7,7 +7,6 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { PetComponent } from './pet/pet.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
-import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
 import { PetPageComponent } from './pet-page/pet-page.component';
 import { PetMenuComponent } from './pet-menu/pet-menu.component';
 
@@ -17,11 +16,10 @@ const routes: Routes = [
   { path: 'pet-sign-up', component: PetComponent },
   { path: 'user-login', component: UserLoginComponent },
   { path: 'user-menu', component: UserMenuComponent },
-  { path: 'photo-upload', component: PhotoUploadComponent },
   { path: 'pet-page/:id', component: PetPageComponent },
   { path: 'adopt-page', component: AdoptPageComponent },
-  { path: 'report-page', component: ReportPageComponent },
-  { path: 'pet-menu', component: PetMenuComponent }
+  { path: 'pet-menu', component: PetMenuComponent },
+  { path: 'report-page/:id', component: ReportPageComponent }
 ];
 
 @NgModule({

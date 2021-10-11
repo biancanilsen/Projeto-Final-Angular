@@ -12,3 +12,17 @@
 .jumbotron{
     background-color: white;
 }
+.modal-content{
+    color: white;
+    width: 500px;
+    height: 100%;
+    text-align: center !important;
+    justify-content: center;
+    align-items: center;    
+    padding-left: 20px;
+    padding-right: 20px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 20px;
+    background-color: #e7acab !important;
+}

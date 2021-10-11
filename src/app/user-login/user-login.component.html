@@ -1,33 +1,27 @@
-<div class="header"></div>
-<div class="jumbotron">
-<section class="container">
+<body>
+  <section class="container">
     <main class="form-signin">
-      <form >
-        <h1 class="h3 mb-3 fw-normal">Faça o Login</h1>
-    
-        <div class="form-floating">
-          <label for="floatingInput">Email:</label>
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" 
-          name="email"
-          [(ngModel)] = "this.form_email"
-          #email = "ngModel">
-        </div>
-        <div class="form-floating">
-          <label for="floatingPassword">Senha:</label>
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
-          name="password"
-          [(ngModel)] = "this.form_password">
-          
-        </div>
-    
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me"> Lembrar minhas informações
-          </label>
-        </div>
-        <button class="w-100 btn btn-lg btn-primary" type="button" (click)="this.verifyLogin()">Entrar</button>
-        <p class="mt-5 mb-3 text-muted">&copy; GetPet</p>
-      </form>
-    </main>     
+      <h1 class="h3 mb-3 fw-normal" style="text-align:center;">Faça o Login</h1>
+
+      <div class="form-floating">
+        <label for="floatingInput">Name:</label>
+        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="email"
+          [(ngModel)]="this.form_email" #email="ngModel">
+      </div>
+      <div class="form-floating2">
+        <label class="FloatPassword" for="floatingPassword">Senha:</label>
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"
+          [(ngModel)]="this.form_password">
+
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Lembrar minhas informações
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="button" (click)="this.verifyLogin()">Entrar</button>
+      <p class="mt-5 mb-3 text-muted">&copy; GetPet</p>
+    </main>
   </section>
-</div>
+</body>

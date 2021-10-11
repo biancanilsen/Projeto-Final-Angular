@@ -1,29 +1,49 @@
 <body>
-<router-outlet></router-outlet>
-<nav class="navbar navbar-expand-md navbar-dark fixed-top">
-  <a class="navbar-brand" href="#">GetPet</a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarsExampleDefault"
-    aria-controls="navbarsExampleDefault"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
+
+  <router-outlet></router-outlet>
+
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+
+    <a class="navbar-brand" href="#">GetPet</a>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item navbar-right">
+          <a class="nav-link" routerLink="/pet-sign-up">Cadastrar pet</a>
+        </li>
+        <li class="nav-item navbar-right">
+          <a class="nav-link">Doar</a>
+        </li>
+      </ul>
+    </div>
+
+    <ul class="navbar-nav mr-auto navbar-right">
       <li class="nav-item navbar-right">
-        <a class="nav-link" routerLink="/pet-sign-up">Cadastrar pet</a>
+        <a class="nav-link" routerLink="/user-login">Entrar</a>
       </li>
-      <li class="nav-item navbar-right">
-      <a class="nav-link">Doar</a>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/user-sign-up">Cadastre-se</a>
       </li>
+      <div class="btn-group" dropdown style="margin-right: 10px;">
+        <button 
+          id="button-animated" 
+          dropdownToggle 
+          type="button" 
+          class="btn btn-primary dropdown-toggle"
+          aria-controls="dropdown-animated"
+          >
+            Meu perfil 
+          <span class="caret"></span>
+        </button>
+        <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu"
+            role="menu" aria-labelledby="button-animated">
+          <li role="menuitem"><a class="dropdown-item" href="#">Meus pets</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Sair</a>
+        </ul>
+      </div>
     </ul>
   </div>
   <ul class="navbar-nav mr-auto navbar-right">
@@ -47,4 +67,8 @@
     </div>
   </ul>
 </nav>
+
+<footer class="containerFooter">
+  <p>&copy; Get Pet 2021</p>
+</footer>
 </body>

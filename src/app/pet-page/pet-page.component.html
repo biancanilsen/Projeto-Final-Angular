@@ -1,29 +1,38 @@
 <body>
-<div class="row">
-    <div class="col-md-6">
-        <img src="../assets/cachorro.jfif" alt="" style="border-radius: 5%;" 
-        >
-    </div>
-    <div class="col-md-6">
-        <div class="description">
-            <p>Nome: {{this.petService.formData.name}}</p>
-            <p>Tipo: {{this.petService.formData.animal}}</p>
-            <p>Raça: {{this.petService.formData.breed}}</p>
-            <p>Idade: {{this.petService.formData.age_years}} anos e {{this.petService.formData.age_months}} meses</p>
-            <p>Dono: {{this.petService.formData.current_owner_id}}</p>
-            <p>Endereço: {{this.user.Street}}, n° {{this.user.House_number}} - {{this.user.District}}</p>
-            <p>Descrição: {{this.petService.formData.description}}</p>
-            <div>
-                <div>
+    <main>
+        <div class="row">
+            <div class="photo">
+                <img src="../assets/cachorro.jfif" alt="photo" style="border-radius: 5%;">
+            </div>
+            <div class="col-md-6">
+                <div class="description">
+                    <p><b>Nome:</b> {{this.petService.formData.name}}</p>
+                    <p><b>Animal:</b> {{this.petService.formData.animal}}</p>
+                    <p><b>Raça:</b> {{this.petService.formData.breed}}</p>
+                    <p><b>Idade:</b> {{this.petService.formData.age_years}} anos e
+                        {{this.petService.formData.age_months}}
+                        meses
+                    </p>
+                    <p><b>Dono:</b> {{this.petService.formData.current_owner_id}}</p>
+                    <p><b>Endereço:</b> {{this.user.Street}}, n° {{this.user.House_number}} - {{this.user.District}}</p>
+                    <p><b>Descrição:</b> {{this.petService.formData.description}}</p>
                     <div>
-                        <a type="button" class="btn btn-primary" [routerLink]="['/adopt-page/']">Adotar</a>
-                    </div>
-                    <div>
-                        <a type="button" class="btn btn-danger" [routerLink]="['/report-page/']">Reportar</a>
+                        <div>
+                            <div class="divAdotar">
+                                <a type="button" class="btn btn-primary" [routerLink]="['/adopt-page/']">Adotar</a>
+                            </div>
+                            <div class="divReportar">
+                                <a type="button" class="btn btn-danger"
+                                    [routerLink]="['/report-page/', this.petService.formData.id]">Reportar</a>
+                            </div>
+                            <div class="divVoltar">
+                                <a type="button" class="btn btn-primary"
+                                routerLink="/">Voltar</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>   
-</div>
+    </main>
 </body>

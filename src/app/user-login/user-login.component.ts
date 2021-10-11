@@ -30,14 +30,7 @@ export class UserLoginComponent implements OnInit {
         user_list[index].logged = true;
         this.userService.loggedUsers.push(user_list[index])
         this.routerService.navigateByUrl("/")
-      }
-      
-      
-    }
-    
-    
+      }    
+    }  
   }
-
-
-
 }

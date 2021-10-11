@@ -1,31 +1,22 @@
-body {
-  display: flex;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #f5f5f5;
-}
-
-.jumbotron{
-  padding-top: 3.5rem;
+body{
+  padding-top: 8.25%;
+  padding-bottom: 4.25%;
   background-color: #6b737a;
   background-image: url(../../assets/card.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: unset;
+  display: flex;
+  align-items: center;
   height: 100%;
 }
 
 .container{
   width: 500px;
   margin-left: 32%;
-  margin-top: 1%;
   margin-right: 25%;
   border-style: groove;
   border-color:white;
   border-radius: 5%;
-  padding-bottom: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
   display: inline-block;
   background-image: url(../../assets/CardsPetRegistrationBackgroundPhotoo.png);
   background-size: cover;
@@ -34,12 +25,16 @@ body {
 }
 
 .form-signin {
-  width: 50%;
-  max-width: 330px;
-  padding: 15px;
+  padding-top: 10%;
+  width: 90%;
+  max-width: 490px;
   margin: auto;
 }
 
+.checkbox{
+  padding-top: 7%;
+  padding-bottom: 7%;
+}
 .btn-primary{
   background-color:#c9315c;
   border-color: #c9315c; 
@@ -63,6 +58,12 @@ body {
   font-weight: 400;
 }
 
+.form-floating{
+  padding-top: 7%;
+}
+.form-floating2{
+  padding-top: 7%;
+}
 .form-signin .form-floating:focus-within {
   z-index: 2;
 }
@@ -78,10 +79,12 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
 .form-signin label[for="floatingInput"]{
   margin-right: 100%;
   
 }
+
 .form-signin label[for="floatingPassword"]{
   margin-right: 100%;
 
@@ -89,9 +92,5 @@ body {
 
 form{
   margin-top: 100px;
-}
-
-
-.form{
   border-style: groove;
 }
