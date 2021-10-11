@@ -1,9 +1,9 @@
-.bigcontainer{
-    margin: 0;
+body{
     background-image: url(../../assets/card.png);
+    padding-top: 8.05%;
+    padding-bottom: 8.05%;
     background-size: cover;
-    height: 200%;
-    color: black;
+    font-size: 20px;
 }
 
 .container{
@@ -17,6 +17,11 @@
     padding-bottom: 30px;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.divConfirmar{
+    float: left;
+    padding-right: 10px;
 }
 
 .buttonReportConfirm

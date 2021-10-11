@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'photo-upload', component: PhotoUploadComponent },
   { path: 'pet-page/:id', component: PetPageComponent },
   { path: 'adopt-page', component: AdoptPageComponent },
-  { path: 'report-page', component: ReportPageComponent },
+  { path: 'report-page/:id', component: ReportPageComponent },
 
 ];
 
