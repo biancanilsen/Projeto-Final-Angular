@@ -1,3 +1,18 @@
 .contaier{
-    margin-top: 50px;
+    margin-top: 100px;
+}
+div[class="row"]{
+    padding: 20px;
+}
+.col-8{
+    background-color: rgb(192, 192, 192);
+    width: fit-content;
+    padding: 10px;
+}
+img{
+    border-radius: 10%;
+
+}
+button{
+    
 }
