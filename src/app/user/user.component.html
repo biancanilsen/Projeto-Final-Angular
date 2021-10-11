@@ -1,7 +1,6 @@
-<div class="header"></div>
-<div class="jumbotron">
+<body>
   <section class="container">
-    <h1 class="row" style="padding: 30px;">Cadastro do usuário</h1>
+    <h1 class="title">Cadastro do usuário</h1>
     <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form, template)" >
       <div class="mb-3">
         <label>Nome</label>
@@ -174,7 +173,6 @@
           name="bairro"
           [(ngModel)]="this.userService.formData.District"
           #bairro="ngModel"
-          style="width: 50%; height: 50%; margin-left: 10px;"
         >
           <option selected>Selecione</option>
           <option value="1">Água Verde</option>
@@ -247,7 +245,6 @@
           minlength="1"
           maxlength="4"
           #numeroCasa="ngModel"
-          style="width: 100px;"
         />
       </div>
       
@@ -289,24 +286,28 @@
       >
         Salvar
       </button>
+
       <ng-template #template>
+
         <div class="modal-header">
-          <h4 class="modal-title pull-left">CADASTRO REALIZADO</h4>
-          <button
-            type="button"
-            class="btn-close close pull-right btn-primary"
-            aria-label="Close"
-            (click)="modalRef?.hide()"
+        
+          <h4 class="modal-title"style="text-align: center">CADASTRO REALIZADO</h4>
+          
+        </div>
+        <div class="modal-btn">
+          <button 
+            type="button" 
             routerLink="/"
-          >
-            <span aria-hidden="true" class="visually-hidden">&times;</span>
+            aria-label="Close" 
+            (click)="modalRef?.hide()"
+            class="btn-close close" 
+            >
+            <button type="button" class="btn btn-secondary" style="background-color: red;color: black;" data-bs-dismiss="modal">Close</button>
           </button>
         </div>
+
       </ng-template>
 
     </form>
   </section>
-  </div>
-  <footer class="containerFooter">
-    <p>&copy; Get Pet 2021</p>
-  </footer>
+</body>

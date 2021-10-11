@@ -41,6 +41,10 @@ img{
     float: left;
     padding-right: 10px;
 }
+.divReportar{
+    float: left;
+    padding-right: 10px;
+}
 .buttonReportConfirm{
     border:1px solid;
     padding: 3px 10px; 
