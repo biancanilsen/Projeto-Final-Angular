@@ -15,7 +15,6 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
 import { DemoDropdownAnimatedComponent } from './btn-dropdown/btn-dropdown.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { PetConfirmComponent } from './pet-confirm/pet-confirm.component';
 import { UserConfirmComponent } from './user-confirm/user-confirm.component';
 import { RouterModule } from '@angular/router';
 import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
@@ -35,7 +34,6 @@ import { PetconfirmComponent } from './petconfirm/petconfirm.component';
     UserLoginComponent,
     UserMenuComponent,
     DemoDropdownAnimatedComponent,
-    PetConfirmComponent,
     UserConfirmComponent,
     PhotoUploadComponent,
     PetPageComponent,
