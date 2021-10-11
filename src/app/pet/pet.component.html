@@ -1,95 +1,93 @@
-<div class="header"></div>
-<div class="jumbotron">
+<body>
+
   <section class="container">
-    <h1 class="row" style="padding: 30px; text-align: center">
-      Cadastro do Pet
-    </h1>
-    <form
-      class="row g-3 align-items-center"
-      novalidate
-      #form="ngForm"
-      (submit)="onSubmit(form, template)"
-      
-    >
+
+    <h1 class="title" style="padding: 30px; text-align: center">Cadastro do Pet</h1>
+
+    <form class="row g-3 align-items-center" novalidate #form="ngForm" (submit)="onSubmit(form, template)">
+
       <div class="col-md-6">
         <label>Nome</label>
-        <input
-          name="nome"
-          class="form-control"
-          placeholder="Digite o nome do pet"
-          [(ngModel)]="this.petService.formData.name"
-          required
-          [class.invalid]="nome.invalid && nome.touched"
-          minlength="2"
-          maxlength="60"
-          #nome="ngModel"
+        <input 
+        required 
+        type="text"
+        name="nome" 
+        minlength="2" 
+        maxlength="60" 
+        #nome="ngModel" 
+        class="form-control" 
+        placeholder="Digite o nome do pet"
+        [(ngModel)]="this.petService.formData.name" 
+        [class.invalid]="nome.invalid && nome.touched"
         />
       </div>
 
       <div class="col-md-6">
         <label>Animal</label>
-        <input
-          name="animal"
-          class="form-control"
-          placeholder="Ex: cachorro"
-          [(ngModel)]="this.petService.formData.animal"
-          required
-          [class.invalid]="animal.invalid && animal.touched"
-          minlength="1"
-          maxlength="60"
-          #animal="ngModel"
+        <input 
+        required 
+        type="text"
+        name="animal" 
+        minlength="1" 
+        maxlength="60" 
+        #animal="ngModel" 
+        class="form-control" 
+        placeholder="Ex: cachorro"
+        [(ngModel)]="this.petService.formData.animal" 
+        [class.invalid]="animal.invalid && animal.touched"
         />
       </div>
 
       <div class="col-md-6">
         <label>Raça</label>
-        <input
-          name="raca"
-          class="form-control"
-          placeholder="Ex: vira-lata"
-          [(ngModel)]="this.petService.formData.breed"
-          required
-          [class.invalid]="raca.invalid && raca.touched"
-          minlength="2"
-          maxlength="60"
-          #raca="ngModel"
+        <input 
+        name="raca" 
+        type="text"
+        minlength="2" 
+        maxlength="60" 
+        #raca="ngModel" 
+        class="form-control" 
+        placeholder="Ex: vira-lata" 
+        [(ngModel)]="this.petService.formData.breed"
         />
       </div>
+      
       <div class="col-md-6" style="padding-top: 10px">
         <label>Idade (anos / meses)</label>
-        <input
-          name="anos"
-          class="form-control"
-          type="number"
-          [(ngModel)]="this.petService.formData.age_years"
-          required
-          [class.invalid]="anos.invalid && anos.touched"
-          minlength="1"
-          maxlength="2"
-          #anos="ngModel"
-          style="width: 50%"
+        <input 
+        required
+        name="anos" 
+        type="number" 
+        minlength="1" 
+        maxlength="2" 
+        #anos="ngModel"  
+        style="width: 50%" 
+        class="form-control" 
+        [(ngModel)]="this.petService.formData.age_years" 
+        [class.invalid]="anos.invalid && anos.touched" 
         />
-        <input
-          name="meses"
-          class="form-control"
-          type="number"
-          [(ngModel)]="this.petService.formData.age_months"
-          required
-          [class.invalid]="meses.invalid && meses.touched"
-          minlength="1"
-          maxlength="2"
-          #meses="ngModel"
-          style="width: 50%"
+        <input 
+        required 
+        name="meses" 
+        type="number" 
+        minlength="1" 
+        maxlength="2" 
+        #meses="ngModel"
+        style="width: 50%" 
+        class="form-control" 
+        [(ngModel)]="this.petService.formData.age_months"
+        [class.invalid]="meses.invalid && meses.touched" 
         />
       </div>
+
       <div class="col-6">
         <label>Porte</label>
-        <br />
-        <select
-          class="form-select"
-          name="porte"
-          [(ngModel)]="this.petService.formData.size"
-          #porte="ngModel"
+        <select 
+        name="porte" 
+        type="list"
+        #porte="ngModel"
+        class="form-select" 
+        [(ngModel)]="this.petService.formData.size" 
         >
           <option selected value="1">Pequeno</option>
           <option value="2">Médio</option>
@@ -99,52 +97,57 @@
 
       <div class="col-md-6" style="padding-top: 10px">
         <label>Foto</label>
-        <input
-          name="foto"
-          type="file"
-          id="file"
-          (change)="handleFileInput($event)"
-          [(ngModel)]="this.petService.formData.photos"
-          #foto="ngModel"
+        <input 
+        name="foto" 
+        type="file" 
+        id="file" 
+        #foto="ngModel" 
+        [(ngModel)]="this.petService.formData.photos" 
+        (change)="handleFileInput($event)"
         />
       </div>
 
       <div class="col-12">
         <label>Descrição</label>
-        <textarea
-          class="form-control"
-          id="exampleFormControlTextarea1"
-          rows="3"
-          name="description"
-          [(ngModel)]="this.petService.formData.description"
-          #description="ngModel"
-        ></textarea>
+        <textarea 
+        name="description"
+        type="text"
+        rows="3" 
+        id="exampleFormControlTextarea1" 
+        #description="ngModel"
+        class="form-control" 
+        [(ngModel)]="this.petService.formData.description" 
+        >
+      </textarea>
       </div>
-      <button
-        type="submit"
-        class="btn btn-primary"
-        [disabled] = "form.invalid"
-        
-      >
+
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
         Salvar
       </button>
-      <ng-template #template>
+      
+      <ng-template #template >
+
         <div class="modal-header">
-          <h4 class="modal-title pull-left">CADASTRO REALIZADO</h4>
-          <button
-            type="button"
-            class="btn-close close pull-right"
-            aria-label="Close"
-            (click)="modalRef?.hide()"
+        
+          <h4 class="modal-title"style="text-align: center">CADASTRO REALIZADO</h4>
+          
+        </div>
+        <div class="modal-btn">
+          <button 
+            type="button" 
             routerLink="/"
-          >
-            <span aria-hidden="true" class="visually-hidden">&times;</span>
+            aria-label="Close" 
+            (click)="modalRef?.hide()"
+            class="btn-close close" 
+            >
+            <button type="button" class="btn btn-secondary" style="background-color: red;color: black;" data-bs-dismiss="modal">Close</button>
           </button>
         </div>
+      
       </ng-template>
+
     </form>
+
   </section>
- </div>
-<footer class="containerFooter">
-  <p>&copy; Get Pet 2021</p>
-</footer>
+
+</body>
