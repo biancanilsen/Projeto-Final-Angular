@@ -1,0 +1,39 @@
+* {
+    overflow-x: hidden;
+}
+
+.jumbotron{
+    background-image: url(../../assets/donate-cards.png);
+    background-size: cover;
+    height: 100%;
+}
+
+.display-3{
+    overflow-y: hidden;
+}
+
+body {
+    padding-top: 3.5rem;
+    background-color: #6b737a;
+    background-image: url(../../assets/card.png);
+    position: absolute;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
+
+.image{
+    background: url(../../assets/qrcode.png);
+    position: absolute;
+    z-index: 2;
+}
+
+.containerFooter{
+    margin-top: 50%;
+    text-align: center;
+    border-style: groove;
+    border-radius: 5%;
+    color: white;
+    background-color:#c9315c; 
+    border-color: #c9315c; 
+} 
