@@ -1,48 +1,89 @@
-<form>
-  <div class= "bigcontainer">
-    <section class="container">
-        <fieldset>
-            <legend>Reportar problema aos administradores</legend>
-            <div class="nameReport">
-                <label for="disabledTextInput" class="form-label">Seu Nome:</label>
-                <input type="text" id="disabledTextInput" class="form-control" placeholder="Informe seu nome"/>
-            </div>
-            <div class="telefonelReport">
-                <label for="disabledTextInput" class="form-label">Seu telefone:</label>
-                <input type="text" id="disabledTextInput" class="form-control" placeholder="Informe seu telefone"/>
-            </div>
-            <div class="emailReport">
-                <label for="disabledTextInput" class="form-label">Seu e-mail:</label>
-                <input type="text" id="disabledTextInput" class="form-control" placeholder="Informe seu e-mail"/>
-            </div>
-            <div class="problemReport">
-                <label for="disabledTextInput" class="form-label">Descrição do problema:</label>
-                <input type="text" id="disabledTextInput" class="form-control" placeholder="Descreva o problema"/>
-            </div>
-            <button
-        type="button"
-        class="btn btn-primary"
-        (click) = "openModel(template)"
-        
-      >
-        Confirmar
-      </button>
-      <ng-template #template>
-        <div class="modal-header">
-          <h4 class="modal-title pull-left">DENÚNCIA ENVIADA</h4>
-          <button
-            type="button"
-            class="btn-close close pull-right"
-            aria-label="Close"
-            (click)="modalRef?.hide()"
-            routerLink="/"
+<body>
+
+  <section class="container">
+
+    <fieldset>
+
+      <legend style="text-align: center;"><b>Reportar problema aos administradores</b></legend>
+
+      <div class="nameReport">
+        <label for="disabledTextInput" class="form-label">Seu Nome:</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="disabledTextInput" 
+          placeholder="Informe seu nome" 
+          />
+      </div>
+
+      <div class="telefonelReport">
+        <label for="disabledTextInput" class="form-label">Seu telefone:</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="disabledTextInput" 
+          placeholder="Informe seu telefone" 
+        />
+      </div>
+
+      <div class="emailReport">
+        <label for="disabledTextInput" class="form-label">Seu e-mail:</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="disabledTextInput" 
+          placeholder="Informe seu e-mail" 
+        />
+      </div>
+
+      <div class="problemReport">
+        <label for="disabledTextInput" class="form-label">Descrição do problema:</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="disabledTextInput" 
+          placeholder="Descreva o problema" 
+        />
+      </div>
+
+      <div class="divConfirmar">
+        <button 
+          type="button" 
+          class="btn btn-primary" 
+          (click)="openModel(template)"
           >
-            <span aria-hidden="true" class="visually-hidden">&times;</span>
-          </button>
+          Confirmar
+        </button>
+      </div>
+
+      <ng-template #template>
+
+        <div class="modal-header">
+
+          <h4 class="modal-title pull-left">DENÚNCIA ENVIADA</h4>
+
         </div>
+          <div class="modal-btn">
+            <button 
+              type="button" 
+              routerLink="/"
+              aria-label="Close" 
+              (click)="modalRef?.hide()"
+              [routerLink]="['/pet-page/', pet.id]"
+              class="btn-close close" 
+              >
+              <button type="button" class="btn btn-secondary" style="background-color: red;color: black;" data-bs-dismiss="modal">Close</button>
+            </button>
+          </div>
+
       </ng-template>
-            <button type="button" class="btn btn-danger"[routerLink]= "['/']">Cancelar</button>
-        </fieldset>
-    </section>
-  </div>
-  </form>
+
+      <div>
+        <button type="button" class="btn btn-danger" [routerLink]="['/pet-page/', pet.id]">Cancelar</button>
+      </div>
+
+    </fieldset>
+
+  </section>
+
+</body>

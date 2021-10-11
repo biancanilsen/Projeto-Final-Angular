@@ -24,5 +24,4 @@ export class PetPageComponent implements OnInit {
     this.userService.getLogged
     this.user = this.userService.logged
   }
-
 }
