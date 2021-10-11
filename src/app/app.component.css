@@ -10,3 +10,12 @@
 #button-doar {
 margin-right: 75%;
 }
+
+.containerFooter{
+    text-align: center;
+    padding-top: 0.6%;
+    border-style: groove;
+    color: white;
+    background-color:#c9315c; 
+    border-color: #c9315c; 
+} 
