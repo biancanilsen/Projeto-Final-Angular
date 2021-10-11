@@ -1,7 +1,6 @@
 import { HttpHeaders } from '@angular/common/http';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { Router } from '@angular/router';
 import { Photo } from '../domain/photo';
 import { PetService } from '../services/pet.service';
 import { PhotoUploadService } from '../services/photo-upload.service';
@@ -17,9 +16,7 @@ export class PetComponent implements OnInit {
   constructor(
     public petService: PetService,
     public userService: UserService,
-    private routerService: Router,
     private photoUploadService: PhotoUploadService,
-    private bsModalRef: BsModalRef,
     private modalService: BsModalService
   ) { }
 
