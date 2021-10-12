@@ -16,8 +16,6 @@ body {
     padding-top: 3.5rem;
     background-color: #6b737a;
     background-image: url(../../assets/card.png);
-    position: absolute;
-    z-index: 1;
     background-repeat: no-repeat;
     background-size: cover;
 } 
@@ -26,6 +24,10 @@ body {
     background: url(../../assets/qrcode.png);
     position: absolute;
     z-index: 2;
+    height: 28%;
+    width: 15%;
+    margin-left: 30%;
+    margin-top: 20%;
 }
 
 .containerFooter{
